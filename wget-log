@@ -1,0 +1,11 @@
+--2025-07-29 22:13:43--  https://handwovenmagazine.com/cdn-cgi/image/format=auto/https://www.datocms-assets.com/75077/1656653215-monika-guzikowska-bf8wyxuqobe-unsplash-crop.jpg?auto=format
+Resolving handwovenmagazine.com (handwovenmagazine.com)... 2606:4700:3031::6815:5ea0, 2606:4700:3033::ac43:8a10, 172.67.138.16, ...
+Connecting to handwovenmagazine.com (handwovenmagazine.com)|2606:4700:3031::6815:5ea0|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 254310 (248K) [image/jpeg]
+Saving to: ‘public/assets/products/Banana-Fiber.webp’
+
+           public/asse   0%[                            ]       0  --.-KB/s                         public/asset  56%[==============>             ] 140.65K   588KB/s               public/assets/products 100%[===========================>] 248.35K   984KB/s    in 0.3s    
+
+2025-07-29 22:13:45 (984 KB/s) - ‘public/assets/products/Banana-Fiber.webp’ saved [254310/254310]
+
