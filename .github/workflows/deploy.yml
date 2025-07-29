@@ -20,10 +20,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
       
-      - name: Install gh-pages
-        run: npm install gh-pages --save-dev
+      - name: Build
+        run: npm run build
       
-      - name: Build and Deploy
-        run: npm run deploy
+      - name: Deploy to GitHub Pages
+        run: npx gh-pages -d dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
