@@ -1,73 +1,87 @@
-# Welcome to your Lovable project
+# S2 Overseas - Export Products Website
 
-## Project info
+A modern React website showcasing S2 Overseas export products including spices, processed foods, and traditional handicrafts.
 
-**URL**: https://lovable.dev/projects/5cee0696-f08b-470e-b34f-ced7a4b00718
+## 🚀 Features
 
-## How can I edit this code?
+- **Responsive Design**: Works perfectly on all devices
+- **Product Showcase**: Beautiful slideshow of export products
+- **Modern UI**: Built with Tailwind CSS and shadcn/ui
+- **Interactive Elements**: Hover effects and smooth animations
+- **SEO Optimized**: Meta tags and proper structure
 
-There are several ways of editing your application.
+## 🛠️ Tech Stack
 
-**Use Lovable**
+- **React 18** with TypeScript
+- **Vite** for fast development and building
+- **Tailwind CSS** for styling
+- **shadcn/ui** for UI components
+- **React Router** for navigation
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/5cee0696-f08b-470e-b34f-ced7a4b00718) and start prompting.
+## 📦 Products Featured
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Spices**: Turmeric Powder, Red Chilli Powder, Cumin Seed
+- **Processed Foods**: Banana Powder, Banana Fiber
+- **Handicrafts**: Kondapalli Toys
 
-**Use your preferred IDE**
+## 🚀 Deployment
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+This project is automatically deployed to GitHub Pages using GitHub Actions.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Live Demo
+Visit: `https://[your-username].github.io/aqua-code-grabber-main/`
 
-Follow these steps:
+## 🏃‍♂️ Local Development
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/[your-username]/aqua-code-grabber-main.git
+   cd aqua-code-grabber-main
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+4. **Open in browser**
+   Navigate to `http://localhost:8080`
 
-**Edit a file directly in GitHub**
+## 📝 Available Scripts
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
 
-**Use GitHub Codespaces**
+## 🎨 Customization
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Adding New Products
+1. Add product images to `public/assets/products/`
+2. Update the products array in `src/components/ProductsSection.tsx`
+3. Add the image to the slideshow in `src/components/HeroSection.tsx`
 
-## What technologies are used for this project?
+### Styling
+- Modify Tailwind classes in components
+- Update colors in `tailwind.config.ts`
+- Add custom CSS in `src/index.css`
 
-This project is built with:
+## 📄 License
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+This project is open source and available under the [MIT License](LICENSE).
 
-## How can I deploy this project?
+## 🤝 Contributing
 
-Simply open [Lovable](https://lovable.dev/projects/5cee0696-f08b-470e-b34f-ced7a4b00718) and click on Share -> Publish.
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+**Built with ❤️ for S2 Overseas**
