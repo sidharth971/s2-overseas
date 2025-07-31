@@ -41,7 +41,7 @@ const ProductsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-slate-50">
+    <section id="products-section" className="py-20 bg-gradient-to-b from-background to-slate-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-in fade-in duration-1000">
           <h2 className="text-4xl lg:text-5xl font-bold mb-8 text-shadow">

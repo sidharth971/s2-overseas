@@ -1,6 +1,16 @@
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
+  const scrollToProducts = () => {
+    const productsSection = document.getElementById('products-section');
+    if (productsSection) {
+      productsSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <header className="w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
       <div className="container mx-auto px-4">
@@ -28,7 +38,13 @@ const Header = () => {
           <nav className="hidden lg:flex items-center gap-8">
             <a href="#" className="text-primary font-semibold hover:text-primary/80 transition-colors">Home</a>
             <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">About</a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">Products</a>
+            <a 
+              href="#products" 
+              onClick={scrollToProducts}
+              className="text-foreground hover:text-primary transition-colors font-medium cursor-pointer"
+            >
+              Products
+            </a>
             <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">Service</a>
             <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">Certificates</a>
             <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">Contact</a>
