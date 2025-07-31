@@ -11,7 +11,8 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "deploy:prod": "npm run build && gh-pages -d dist"
+    "deploy:prod": "npm run build && gh-pages -d dist",
+    "deploy:ci": "gh-pages -d dist --dotfiles"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
