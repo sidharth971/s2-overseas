@@ -46,8 +46,8 @@ Visit: `https://[your-username].github.io/aqua-code-grabber-main/`
 
 3. **Start development server**
    ```bash
-   npm run dev
-   ```
+npm run dev
+```
 
 4. **Open in browser**
    Navigate to `http://localhost:8080`

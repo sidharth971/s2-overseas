@@ -2,46 +2,45 @@ import { Button } from "@/components/ui/button";
 
 const Header = () => {
   return (
-    <header className="w-full border-b bg-background/80 backdrop-blur-sm sticky top-0 z-50">
+    <header className="w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-blue-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">A</span>
+            <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+              <span className="text-white font-bold text-xl">S2</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-foreground">S2 Overseas Pvt. Ltd</h1>
-              {/* <p className="text-xs text-muted-foreground"></p> */}
+              <h1 className="text-xl font-bold text-foreground gradient-text">S2 Overseas Pvt. Ltd</h1>
             </div>
           </div>
 
           {/* ISO Certification */}
           <div className="hidden md:flex items-center gap-2">
-            <div className="bg-red-600 text-white text-xs px-2 py-1 rounded">ISO</div>
+            <div className="bg-gradient-to-r from-red-500 to-red-600 text-white text-xs px-3 py-1.5 rounded-full font-semibold shadow-md">ISO</div>
             <div className="text-sm">
-              <div className="font-semibold">22000:2018</div>
+              <div className="font-bold text-foreground">22000:2018</div>
               <div className="text-xs text-muted-foreground">Certified</div>
             </div>
           </div>
 
           {/* Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            <a href="#" className="text-orange-500 font-medium hover:text-orange-600 transition-colors">Home</a>
-            <a href="#" className="text-foreground hover:text-orange-500 transition-colors">About</a>
-            <a href="#" className="text-foreground hover:text-orange-500 transition-colors">Products</a>
-            <a href="#" className="text-foreground hover:text-orange-500 transition-colors">Service</a>
-            <a href="#" className="text-foreground hover:text-orange-500 transition-colors">Certificates</a>
-            <a href="#" className="text-foreground hover:text-orange-500 transition-colors">Contact</a>
+            <a href="#" className="text-primary font-semibold hover:text-primary/80 transition-colors">Home</a>
+            <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">About</a>
+            <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">Products</a>
+            <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">Service</a>
+            <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">Certificates</a>
+            <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">Contact</a>
           </nav>
 
           {/* Contact Info & CTA */}
           <div className="flex items-center gap-4">
             <div className="hidden xl:block text-right text-sm">
-              <div className="font-semibold">+91 9160040202</div>
-              <div className="text-muted-foreground">sales@s2overseas.com</div>
+              <div className="font-bold text-foreground">+91 9160040202</div>
+              <div className="text-muted-foreground text-xs">sales@s2overseas.com</div>
             </div>
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+            <Button className="btn-primary">
               Get The Brochure
             </Button>
           </div>

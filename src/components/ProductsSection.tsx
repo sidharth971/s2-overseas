@@ -41,12 +41,15 @@ const ProductsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-gradient-to-b from-background to-slate-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-in fade-in duration-1000">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-8">
-            <span className="text-orange-600">Product</span> We Export
+          <h2 className="text-4xl lg:text-5xl font-bold mb-8 text-shadow">
+            <span className="gradient-text">Product</span> We Export
           </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-medium">
+            Premium quality Indian spices, processed foods, and traditional handicrafts for global markets
+          </p>
         </div>
 
         {/* First Row - 4 Products */}
@@ -54,18 +57,18 @@ const ProductsSection = () => {
           {products.slice(0, 4).map((product, index) => (
             <div 
               key={product.id} 
-              className="group text-center animate-in fade-in duration-1000"
+              className="group text-center animate-in fade-in duration-1000 card-hover"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="mb-6 overflow-hidden rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300">
+              <div className="mb-6 overflow-hidden rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300 bg-white">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-64 object-cover group-hover:scale-110 group-hover:animate-bounce transition-transform duration-500"
+                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
-              <h3 className="text-xl font-semibold text-foreground group-hover:text-orange-600 transition-colors">
-                <a href={product.link} className="hover:underline">
+              <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+                <a href={product.link} className="hover:underline font-medium">
                   {product.name}
                 </a>
               </h3>
@@ -78,18 +81,18 @@ const ProductsSection = () => {
           {products.slice(4, 8).map((product, index) => (
             <div 
               key={product.id} 
-              className="group text-center animate-in fade-in duration-1000"
+              className="group text-center animate-in fade-in duration-1000 card-hover"
               style={{ animationDelay: `${(index + 4) * 100}ms` }}
             >
-              <div className="mb-6 overflow-hidden rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300">
+              <div className="mb-6 overflow-hidden rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300 bg-white">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-64 object-cover group-hover:scale-110 group-hover:animate-bounce transition-transform duration-500"
+                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
-              <h3 className="text-xl font-semibold text-foreground group-hover:text-orange-600 transition-colors">
-                <a href={product.link} className="hover:underline">
+              <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+                <a href={product.link} className="hover:underline font-medium">
                   {product.name}
                 </a>
               </h3>
@@ -101,7 +104,7 @@ const ProductsSection = () => {
         <div className="text-center animate-in fade-in duration-1000 delay-1000">
           <Button 
             size="lg"
-            className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-3"
+            className="btn-primary"
           >
             View All Products
           </Button>
