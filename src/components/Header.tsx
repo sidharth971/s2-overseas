@@ -29,7 +29,7 @@ const Header = () => {
           <div className="hidden md:flex items-center gap-2">
             <div className="bg-gradient-to-r from-red-500 to-red-600 text-white text-xs px-3 py-1.5 rounded-full font-semibold shadow-md">ISO</div>
             <div className="text-sm">
-              <div className="font-bold text-foreground">22000:2018</div>
+              <div className="font-bold text-foreground">22000:2025</div>
               <div className="text-xs text-muted-foreground">Certified</div>
             </div>
           </div>
