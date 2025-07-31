@@ -1,70 +1,124 @@
-# 🚀 Deployment Guide - GitHub Pages
+# Deployment Guide - GitHub Pages
 
-## Quick Setup (5 minutes)
+This guide explains how to deploy the S2 Overseas website to GitHub Pages.
 
-### Step 1: Enable GitHub Pages
-1. Go to your repository: `https://github.com/sidharth971/aqua-code-grabber-main`
-2. Click **Settings** tab
-3. Scroll down to **Pages** (in left sidebar)
-4. Under **Source**, select **Deploy from a branch**
-5. Choose **main** branch and **/(root)** folder
-6. Click **Save**
+## Prerequisites
 
-### Step 2: Build and Deploy
-1. The GitHub Actions workflow will automatically build your project
-2. Download the build artifacts from the Actions tab
-3. Extract the `dist` folder contents to your repository root
-4. Commit and push the files
+1. **GitHub Account**: Make sure you have a GitHub account
+2. **Repository**: This project should be in a GitHub repository
+3. **Node.js**: Version 18 or higher installed locally
 
-### Step 3: Your Site is Live!
-- **URL**: `https://sidharth971.github.io/aqua-code-grabber-main/`
-- **Automatic**: Every push to main branch will rebuild and deploy
+## Deployment Methods
 
-## Alternative: Manual Deployment
+### Method 1: Manual Deployment (Recommended for testing)
 
-If the automatic deployment doesn't work, you can deploy manually:
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-### Option 1: Using GitHub CLI
-```bash
-# Install GitHub CLI
-npm install -g gh
+2. **Build the project**:
+   ```bash
+   npm run build
+   ```
 
-# Login to GitHub
-gh auth login
+3. **Deploy to GitHub Pages**:
+   ```bash
+   npm run deploy
+   ```
 
-# Enable Pages
-gh repo edit --enable-pages
+### Method 2: Automated Deployment (Recommended for production)
 
-# Deploy
-gh pages deploy dist --branch main
+The project includes a GitHub Actions workflow that automatically deploys when you push to the main branch.
+
+1. **Push your changes to the main branch**:
+   ```bash
+   git add .
+   git commit -m "Update website"
+   git push origin main
+   ```
+
+2. **The deployment will happen automatically** via the GitHub Actions workflow.
+
+## GitHub Pages Configuration
+
+### Enable GitHub Pages
+
+1. Go to your repository on GitHub
+2. Navigate to **Settings** → **Pages**
+3. Under **Source**, select **Deploy from a branch**
+4. Choose **gh-pages** branch and **/(root)** folder
+5. Click **Save**
+
+### Repository Settings
+
+Make sure your repository has the following settings:
+
+- **Repository name**: `aqua-code-grabber-main` (or update the base path in `vite.config.ts`)
+- **Visibility**: Public (required for GitHub Pages)
+
+## Configuration Files
+
+### vite.config.ts
+The base path is configured for GitHub Pages:
+```typescript
+base: mode === 'production' ? '/aqua-code-grabber-main/' : './'
 ```
 
-### Option 2: Using gh-pages package
-```bash
-# Install gh-pages
-npm install --save-dev gh-pages
-
-# Add to package.json scripts
-"predeploy": "npm run build",
-"deploy": "gh-pages -d dist"
-
-# Deploy
-npm run deploy
+### package.json
+Deployment scripts are included:
+```json
+{
+  "scripts": {
+    "deploy": "gh-pages -d dist",
+    "deploy:prod": "npm run build && gh-pages -d dist"
+  }
+}
 ```
+
+### .github/workflows/deploy.yml
+Automated deployment workflow that triggers on pushes to main branch.
 
 ## Troubleshooting
 
-### If Pages doesn't appear:
-1. Make sure repository is **Public**
-2. Check that **Pages** is enabled in Settings
-3. Wait 5-10 minutes for first deployment
-4. Check the **Actions** tab for build status
+### Common Issues
 
-### If build fails:
-1. Check the Actions tab for error details
-2. Make sure all dependencies are in package.json
-3. Verify the build works locally: `npm run build`
+1. **404 Errors**: Make sure the base path in `vite.config.ts` matches your repository name
+2. **Build Failures**: Check that all dependencies are installed and Node.js version is 18+
+3. **Deployment Not Working**: Verify that GitHub Pages is enabled in repository settings
 
-## Support
-- GitHub Pages Documentation: https://pages.github.com/
-- GitHub Actions Documentation: https://docs.github.com/en/actions 
+### Manual Deployment Steps
+
+If automated deployment fails:
+
+1. **Clean and reinstall**:
+   ```bash
+   rm -rf node_modules package-lock.json
+   npm install
+   ```
+
+2. **Build and deploy manually**:
+   ```bash
+   npm run build
+   npm run deploy
+   ```
+
+3. **Check GitHub Actions**: Go to Actions tab in your repository to see deployment logs
+
+## Accessing Your Deployed Site
+
+Once deployed, your site will be available at:
+`https://[your-username].github.io/aqua-code-grabber-main/`
+
+## Development vs Production
+
+- **Development**: Uses relative paths (`./`)
+- **Production**: Uses repository-specific paths (`/aqua-code-grabber-main/`)
+
+This ensures the site works both locally and when deployed to GitHub Pages.
+
+## Security Notes
+
+- The `GITHUB_TOKEN` is automatically provided by GitHub Actions
+- No additional secrets are required for basic deployment
+- The workflow only deploys from the main branch to prevent unauthorized deployments 
