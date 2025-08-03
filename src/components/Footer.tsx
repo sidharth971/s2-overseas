@@ -1,16 +1,16 @@
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-16">
-      <div className="w-full max-w-7xl mx-auto px-4">
+      <div className="w-full px-8">
         <div className="flex flex-wrap justify-between gap-8">
           {/* Company Info */}
           <div className="flex-1 min-w-64 space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-lg">S2</span>
+                <span className="text-white font-bold text-lg">Thrayana</span>
               </div>
               <div>
-                <h3 className="text-lg font-bold gradient-text">S2 Overseas Pvt. Ltd</h3>
+                <h3 className="text-lg font-bold gradient-text">Thrayana PRIVATE LIMITED</h3>
                 <p className="text-sm text-gray-300 font-medium">Premium Export Solutions</p>
               </div>
             </div>
@@ -67,7 +67,7 @@ const Footer = () => {
         <div className="border-t border-gray-700 mt-12 pt-8 text-center">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-400 font-medium">
-              © 2024 S2 Overseas Pvt. Ltd. All rights reserved.
+              © Thrayana PRIVATE LIMITED. All rights reserved.
             </p>
             <div className="flex gap-4">
               <a href="#" className="text-gray-400 hover:text-primary transition-colors">

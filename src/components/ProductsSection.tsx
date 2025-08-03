@@ -9,6 +9,12 @@ const ProductsSection = () => {
       link: "#"
     },
     {
+      id: 9,
+      name: "Moringa Powder",
+      image: "/assets/products/moringa-powder-packaging.jpg",
+      link: "#"
+    },
+    {
       id: 3,
       name: "Turmeric Powder",
       image: "/assets/products/Turmeric-Powder.webp",
@@ -41,8 +47,8 @@ const ProductsSection = () => {
   ];
 
   return (
-    <section id="products-section" className="w-full h-screen bg-gradient-to-b from-background to-slate-50 overflow-y-auto">
-      <div className="w-full h-full flex flex-col justify-center px-4">
+    <section id="products-section" className="w-full min-h-screen bg-gradient-to-b from-background to-slate-50 overflow-hidden">
+      <div className="w-full h-full flex flex-col justify-center px-8 pt-20">
         <div className="text-center mb-16 animate-in fade-in duration-1000">
           <h2 className="text-4xl lg:text-5xl font-bold mb-8 text-shadow">
             <span className="gradient-text">Product</span> We Export
@@ -59,7 +65,7 @@ const ProductsSection = () => {
             {products.slice(0, 4).map((product, index) => (
               <div 
                 key={product.id} 
-                className="group text-center animate-in fade-in duration-1000 card-hover w-64"
+                className="group text-center animate-in fade-in duration-1000 card-hover w-72"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="mb-6 overflow-hidden rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300 bg-white">
@@ -83,7 +89,7 @@ const ProductsSection = () => {
             {products.slice(4, 8).map((product, index) => (
               <div 
                 key={product.id} 
-                className="group text-center animate-in fade-in duration-1000 card-hover w-64"
+                className="group text-center animate-in fade-in duration-1000 card-hover w-72"
                 style={{ animationDelay: `${(index + 4) * 100}ms` }}
               >
                 <div className="mb-6 overflow-hidden rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300 bg-white">
@@ -107,6 +113,7 @@ const ProductsSection = () => {
             <Button 
               size="lg"
               className="btn-primary"
+              onClick={() => window.location.href = '/products'}
             >
               View All Products
             </Button>

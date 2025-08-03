@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="w-full">
+    <div className="w-full space-y-0">
       <Header />
       <HeroSection />
       <RecruitmentSection />

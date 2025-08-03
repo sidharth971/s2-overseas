@@ -1,14 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const heroImages = [
     "https://aquaconnectexim.com/wp-content/uploads/2024/12/B2B-Spices-768x580.webp",
     "/assets/products/Gemini_Generated_Image_4b6i9r4b6i9r4b6i.png",
     "/assets/products/Kondapalli-Toys.webp",
-    "/assets/products/Banana-Fiber.webp"
+    "/assets/products/Banana-Fiber.webp",
+    "/assets/products/moringa-powder-application.jpg"
   ];
 
   useEffect(() => {
@@ -34,8 +37,8 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="w-full h-full flex items-center justify-center px-4">
-        <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
+      <div className="w-full h-full flex items-center justify-center px-8 pt-20">
+        <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Left Content */}
           <div className="flex-1 space-y-8 animate-in slide-in-from-left duration-1000">
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight text-shadow-lg">
@@ -51,7 +54,11 @@ const HeroSection = () => {
             </p>
 
             <div className="flex gap-4">
-              <Button size="lg" className="btn-primary">
+              <Button 
+                size="lg" 
+                className="btn-primary"
+                onClick={() => navigate('/contact')}
+              >
                 Enquire Now
               </Button>
             </div>
@@ -59,8 +66,8 @@ const HeroSection = () => {
 
           {/* Right Image Slideshow */}
           <div className="flex-1 relative animate-in slide-in-from-right duration-1000 delay-300">
-            <div className="relative w-full max-w-lg mx-auto">
-              <div className="relative h-[500px] overflow-hidden rounded-3xl shadow-2xl">
+            <div className="relative w-full max-w-xl mx-auto">
+              <div className="relative h-[600px] overflow-hidden rounded-3xl shadow-2xl">
                 {heroImages.map((image, index) => (
                   <div
                     key={index}
