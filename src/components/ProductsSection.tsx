@@ -41,8 +41,8 @@ const ProductsSection = () => {
   ];
 
   return (
-    <section id="products-section" className="py-20 bg-gradient-to-b from-background to-slate-50">
-      <div className="container mx-auto px-4">
+    <section id="products-section" className="w-full h-screen bg-gradient-to-b from-background to-slate-50 overflow-y-auto">
+      <div className="w-full h-full flex flex-col justify-center px-4">
         <div className="text-center mb-16 animate-in fade-in duration-1000">
           <h2 className="text-4xl lg:text-5xl font-bold mb-8 text-shadow">
             <span className="gradient-text">Product</span> We Export
@@ -52,62 +52,65 @@ const ProductsSection = () => {
           </p>
         </div>
 
-        {/* First Row - 4 Products */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {products.slice(0, 4).map((product, index) => (
-            <div 
-              key={product.id} 
-              className="group text-center animate-in fade-in duration-1000 card-hover"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <div className="mb-6 overflow-hidden rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300 bg-white">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                />
+        {/* Products Container */}
+        <div className="flex-1 flex flex-col justify-center">
+          {/* First Row - 4 Products */}
+          <div className="flex flex-wrap justify-center gap-8 mb-12">
+            {products.slice(0, 4).map((product, index) => (
+              <div 
+                key={product.id} 
+                className="group text-center animate-in fade-in duration-1000 card-hover w-64"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className="mb-6 overflow-hidden rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300 bg-white">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+                  <a href={product.link} className="hover:underline font-medium">
+                    {product.name}
+                  </a>
+                </h3>
               </div>
-              <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
-                <a href={product.link} className="hover:underline font-medium">
-                  {product.name}
-                </a>
-              </h3>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        {/* Second Row - 4 Products */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {products.slice(4, 8).map((product, index) => (
-            <div 
-              key={product.id} 
-              className="group text-center animate-in fade-in duration-1000 card-hover"
-              style={{ animationDelay: `${(index + 4) * 100}ms` }}
-            >
-              <div className="mb-6 overflow-hidden rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300 bg-white">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                />
+          {/* Second Row - 4 Products */}
+          <div className="flex flex-wrap justify-center gap-8 mb-16">
+            {products.slice(4, 8).map((product, index) => (
+              <div 
+                key={product.id} 
+                className="group text-center animate-in fade-in duration-1000 card-hover w-64"
+                style={{ animationDelay: `${(index + 4) * 100}ms` }}
+              >
+                <div className="mb-6 overflow-hidden rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300 bg-white">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+                  <a href={product.link} className="hover:underline font-medium">
+                    {product.name}
+                  </a>
+                </h3>
               </div>
-              <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
-                <a href={product.link} className="hover:underline font-medium">
-                  {product.name}
-                </a>
-              </h3>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        {/* View All Products Button */}
-        <div className="text-center animate-in fade-in duration-1000 delay-1000">
-          <Button 
-            size="lg"
-            className="btn-primary"
-          >
-            View All Products
-          </Button>
+          {/* View All Products Button */}
+          <div className="text-center animate-in fade-in duration-1000 delay-1000">
+            <Button 
+              size="lg"
+              className="btn-primary"
+            >
+              View All Products
+            </Button>
+          </div>
         </div>
       </div>
     </section>

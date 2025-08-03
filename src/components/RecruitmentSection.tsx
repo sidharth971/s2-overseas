@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const RecruitmentSection = () => {
   return (
-    <section className="relative py-20 bg-gradient-to-r from-orange-100 to-blue-100 overflow-hidden">
+    <section className="relative w-full h-screen bg-gradient-to-r from-orange-100 to-blue-100 overflow-hidden flex items-center justify-center">
       {/* Background Decorative Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-10 w-16 h-16 opacity-20 transform -translate-x-5">
@@ -19,7 +19,7 @@ const RecruitmentSection = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 text-center relative z-10">
+      <div className="w-full px-4 text-center relative z-10">
         <div className="max-w-4xl mx-auto space-y-8 animate-in slide-in-from-bottom duration-1000">
           <h2 className="text-3xl lg:text-4xl font-bold">
             We are expanding our team globally Join us as{" "}

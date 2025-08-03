@@ -6,13 +6,9 @@ const HeroSection = () => {
 
   const heroImages = [
     "https://aquaconnectexim.com/wp-content/uploads/2024/12/B2B-Spices-768x580.webp",
-    "https://aquaconnectexim.com/wp-content/uploads/2024/09/2-6.webp",
-    "/assets/products/Banana-Powder.webp",
-    "/assets/products/Turmeric-Powder.webp",
-    "/assets/products/Red-Chilli-Powder.webp",
-    "/assets/products/Cumin-Seed.webp",
-    "/assets/products/Banana-Fiber.webp",
-    "/assets/products/Kondapalli-Toys.webp"
+    "/assets/products/Gemini_Generated_Image_4b6i9r4b6i9r4b6i.png",
+    "/assets/products/Kondapalli-Toys.webp",
+    "/assets/products/Banana-Fiber.webp"
   ];
 
   useEffect(() => {
@@ -24,7 +20,7 @@ const HeroSection = () => {
   }, [heroImages.length]);
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 overflow-hidden">
+    <section className="relative w-full h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-20 h-20 opacity-10">
@@ -38,10 +34,10 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+      <div className="w-full h-full flex items-center justify-center px-4">
+        <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Left Content */}
-          <div className="space-y-8 animate-in slide-in-from-left duration-1000">
+          <div className="flex-1 space-y-8 animate-in slide-in-from-left duration-1000">
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight text-shadow-lg">
               Indian Spices, Processed Food & Tea{" "}
               <span className="gradient-text">Exporter</span> Globally
@@ -62,7 +58,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right Image Slideshow */}
-          <div className="relative animate-in slide-in-from-right duration-1000 delay-300">
+          <div className="flex-1 relative animate-in slide-in-from-right duration-1000 delay-300">
             <div className="relative w-full max-w-lg mx-auto">
               <div className="relative h-[500px] overflow-hidden rounded-3xl shadow-2xl">
                 {heroImages.map((image, index) => (

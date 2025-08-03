@@ -1,10 +1,10 @@
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-16">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="w-full max-w-7xl mx-auto px-4">
+        <div className="flex flex-wrap justify-between gap-8">
           {/* Company Info */}
-          <div className="space-y-4">
+          <div className="flex-1 min-w-64 space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold text-lg">S2</span>
@@ -21,7 +21,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
+          <div className="flex-1 min-w-48 space-y-4">
             <h4 className="text-lg font-bold text-white">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li><a href="#" className="text-gray-300 hover:text-primary transition-colors font-medium">Home</a></li>
@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
 
           {/* Products */}
-          <div className="space-y-4">
+          <div className="flex-1 min-w-48 space-y-4">
             <h4 className="text-lg font-bold text-white">Our Products</h4>
             <ul className="space-y-2 text-sm">
               <li><a href="#" className="text-gray-300 hover:text-primary transition-colors font-medium">Spices & Powders</a></li>
@@ -44,7 +44,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-4">
+          <div className="flex-1 min-w-48 space-y-4">
             <h4 className="text-lg font-bold text-white">Contact Us</h4>
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-2">
