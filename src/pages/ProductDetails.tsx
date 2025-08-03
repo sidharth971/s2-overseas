@@ -66,7 +66,7 @@ const ProductDetails = () => {
       id: 8,
       name: "Moringa Powder",
       category: "processed-foods",
-      mainImage: "/assets/products/Moringa-Powder.webp",
+      mainImage: "/assets/products/moringa-leaves-harvest.jpg",
       gallery: [
         "/assets/products/moringa-leaves-harvest.jpg",
         "/assets/products/moringa-powder-packaging.jpg",
@@ -119,7 +119,7 @@ const ProductDetails = () => {
       id: 2,
       name: "Turmeric Powder",
       category: "spices",
-      mainImage: "/assets/products/Turmeric-Powder.webp",
+      mainImage: "/assets/products/turmeric-applications.jpg",
       gallery: [
         "/assets/products/turmeric-rhizomes.jpg",
         "/assets/products/turmeric-processing.jpg",
@@ -171,9 +171,9 @@ const ProductDetails = () => {
       id: 3,
       name: "Guntur Red Chilli Powder",
       category: "spices",
-      mainImage: "/assets/products/Red-Chilli-Powder.webp",
+      mainImage: "/assets/products/chilli-powder-applications.jpg",
       gallery: [
-        "/assets/products/guntur-chillies-farm.jpg",
+        "/assets/products/guntur-chilli.jpg",
         "/assets/products/chilli-processing.jpg",
         "/assets/products/chilli-powder-applications.jpg"
       ],
