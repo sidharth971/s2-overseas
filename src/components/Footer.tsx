@@ -1,10 +1,10 @@
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-16">
-      <div className="w-full px-8">
-        <div className="flex flex-wrap justify-between gap-8">
+    <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-12 sm:py-16">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
-          <div className="flex-1 min-w-64 space-y-4">
+          <div className="space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold text-lg">Thrayana</span>
@@ -21,7 +21,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="flex-1 min-w-48 space-y-4">
+          <div className="space-y-4">
             <h4 className="text-lg font-bold text-white">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li><a href="#" className="text-gray-300 hover:text-primary transition-colors font-medium">Home</a></li>
@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
 
           {/* Products */}
-          <div className="flex-1 min-w-48 space-y-4">
+          <div className="space-y-4">
             <h4 className="text-lg font-bold text-white">Our Products</h4>
             <ul className="space-y-2 text-sm">
               <li><a href="#" className="text-gray-300 hover:text-primary transition-colors font-medium">Spices & Powders</a></li>
@@ -44,7 +44,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="flex-1 min-w-48 space-y-4">
+          <div className="space-y-4">
             <h4 className="text-lg font-bold text-white">Contact Us</h4>
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-2">
@@ -64,12 +64,12 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-700 mt-12 pt-8 text-center">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-gray-700 mt-8 sm:mt-12 pt-6 sm:pt-8">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
             <p className="text-sm text-gray-400 font-medium">
               © Thrayana PRIVATE LIMITED. All rights reserved.
             </p>
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <a href="#" className="text-gray-400 hover:text-primary transition-colors">
                 Privacy Policy
               </a>

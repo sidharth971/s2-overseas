@@ -244,15 +244,15 @@ const Products = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-24">
+      <main className="pt-16 sm:pt-20 lg:pt-24">
         {/* Hero Section */}
-        <section className="bg-gradient-to-b from-primary/10 to-background py-20">
-          <div className="container mx-auto px-4">
+        <section className="bg-gradient-to-b from-primary/10 to-background py-12 sm:py-16 lg:py-20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center animate-in fade-in duration-1000">
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 gradient-text">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 gradient-text">
                 Our Products
               </h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
                 Discover our premium collection of Indian spices, processed foods, and traditional handicrafts 
                 that bring the authentic taste and culture of India to the world.
               </p>
@@ -261,15 +261,15 @@ const Products = () => {
         </section>
 
         {/* Category Filter */}
-        <section className="py-12 bg-card/50">
-          <div className="container mx-auto px-4">
-            <div className="flex flex-wrap justify-center gap-4">
+        <section className="py-8 sm:py-12 bg-card/50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
               {categories.map((category, index) => (
                 <Button
                   key={category.id}
                   variant={selectedCategory === category.id ? "default" : "outline"}
                   onClick={() => setSelectedCategory(category.id)}
-                  className="category-filter animate-in fade-in duration-500"
+                  className="category-filter animate-in fade-in duration-500 text-xs sm:text-sm"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   {category.name}
@@ -280,17 +280,17 @@ const Products = () => {
         </section>
 
         {/* Products Grid */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <section className="py-8 sm:py-12 lg:py-16">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {filteredProducts.map((product, index) => (
                 <div
                   key={product.id}
-                  className="group bg-card rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden animate-in fade-in duration-1000 product-card"
+                  className="group bg-card rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden animate-in fade-in duration-1000 product-card"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   {/* Product Image */}
-                  <div className="relative overflow-hidden h-64">
+                  <div className="relative overflow-hidden h-48 sm:h-56 lg:h-64">
                     <img
                       src={product.image}
                       alt={product.name}
@@ -300,27 +300,27 @@ const Products = () => {
                   </div>
 
                   {/* Product Content */}
-                  <div className="p-6">
+                  <div className="p-4 sm:p-6">
                     <div className="flex items-center justify-between mb-3">
-                      <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
                         {product.name}
                       </h3>
-                                             <Badge variant="secondary" className="capitalize badge-animate">
-                         {product.category.replace('-', ' ')}
-                       </Badge>
+                      <Badge variant="secondary" className="capitalize badge-animate text-xs">
+                        {product.category.replace('-', ' ')}
+                      </Badge>
                     </div>
 
-                    <p className="text-muted-foreground mb-4 line-clamp-3">
+                    <p className="text-sm sm:text-base text-muted-foreground mb-4 line-clamp-3">
                       {product.description}
                     </p>
 
                     {/* Features */}
                     <div className="mb-4">
-                      <h4 className="font-semibold text-foreground mb-2">Key Features:</h4>
+                      <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Key Features:</h4>
                       <ul className="space-y-1">
                         {product.features.slice(0, 2).map((feature, idx) => (
-                          <li key={idx} className="text-sm text-muted-foreground flex items-center">
-                            <span className="w-2 h-2 bg-primary rounded-full mr-2" />
+                          <li key={idx} className="text-xs sm:text-sm text-muted-foreground flex items-center">
+                            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full mr-2" />
                             {feature}
                           </li>
                         ))}
@@ -329,8 +329,8 @@ const Products = () => {
 
                     {/* Specifications */}
                     <div className="mb-4">
-                      <h4 className="font-semibold text-foreground mb-2">Specifications:</h4>
-                      <div className="grid grid-cols-2 gap-2 text-sm">
+                      <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Specifications:</h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm">
                         {Object.entries(product.details.specifications).slice(0, 4).map(([key, value]) => (
                           <div key={key} className="flex justify-between">
                             <span className="text-muted-foreground capitalize">
@@ -344,31 +344,31 @@ const Products = () => {
 
                     {/* Certifications */}
                     <div className="mb-4">
-                      <h4 className="font-semibold text-foreground mb-2">Certifications:</h4>
-                                             <div className="flex flex-wrap gap-1">
-                         {product.details.certifications.slice(0, 3).map((cert, idx) => (
-                           <Badge key={idx} variant="outline" className="text-xs badge-animate">
-                             {cert}
-                           </Badge>
-                         ))}
-                       </div>
+                      <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Certifications:</h4>
+                      <div className="flex flex-wrap gap-1">
+                        {product.details.certifications.slice(0, 3).map((cert, idx) => (
+                          <Badge key={idx} variant="outline" className="text-xs badge-animate">
+                            {cert}
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
 
                     {/* Applications */}
                     <div className="mb-6">
-                      <h4 className="font-semibold text-foreground mb-2">Applications:</h4>
-                                             <div className="flex flex-wrap gap-1">
-                         {product.details.applications.slice(0, 3).map((app, idx) => (
-                           <Badge key={idx} variant="secondary" className="text-xs badge-animate">
-                             {app}
-                           </Badge>
-                         ))}
-                       </div>
+                      <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Applications:</h4>
+                      <div className="flex flex-wrap gap-1">
+                        {product.details.applications.slice(0, 3).map((app, idx) => (
+                          <Badge key={idx} variant="secondary" className="text-xs badge-animate">
+                            {app}
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
 
                     {/* CTA Button */}
                     <Button 
-                      className="w-full group-hover:bg-primary/90 transition-colors"
+                      className="w-full group-hover:bg-primary/90 transition-colors text-sm sm:text-base"
                       onClick={() => navigate(`/products/${product.id}`)}
                     >
                       View Details
@@ -381,21 +381,21 @@ const Products = () => {
         </section>
 
         {/* Call to Action */}
-        <section className="py-20 bg-gradient-to-r from-primary/10 to-secondary/10">
-          <div className="container mx-auto px-4 text-center">
+        <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-primary/10 to-secondary/10">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="animate-in fade-in duration-1000">
-              <h2 className="text-4xl font-bold mb-6 gradient-text">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 gradient-text">
                 Ready to Export?
               </h2>
-              <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
                 Get in touch with us to discuss your requirements and receive detailed quotations 
                 for any of our premium products.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="btn-primary">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                <Button size="lg" className="btn-primary w-full sm:w-auto">
                   Request Quotation
                 </Button>
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto">
                   Download Brochure
                 </Button>
               </div>

@@ -379,10 +379,10 @@ const ProductDetails = () => {
     return (
       <div className="min-h-screen bg-background">
         <Header />
-        <main className="pt-24">
-          <div className="container mx-auto px-4 py-16 text-center">
-            <h1 className="text-4xl font-bold text-foreground mb-4">Product Not Found</h1>
-            <p className="text-muted-foreground mb-8">The product you're looking for doesn't exist.</p>
+        <main className="pt-16 sm:pt-20 lg:pt-24">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 text-center">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">Product Not Found</h1>
+            <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8">The product you're looking for doesn't exist.</p>
             <Button onClick={() => navigate('/products')}>
               Back to Products
             </Button>
@@ -396,11 +396,11 @@ const ProductDetails = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-24">
+      <main className="pt-16 sm:pt-20 lg:pt-24">
         {/* Breadcrumb */}
         <section className="py-4 bg-card/50">
-          <div className="container mx-auto px-4">
-            <nav className="flex items-center space-x-2 text-sm">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <nav className="flex items-center space-x-2 text-xs sm:text-sm">
               <Button variant="link" className="p-0 h-auto" onClick={() => navigate('/products')}>
                 Products
               </Button>
@@ -411,19 +411,19 @@ const ProductDetails = () => {
         </section>
 
         {/* Product Hero */}
-        <section className="py-12">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <section className="py-8 sm:py-12">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
               {/* Product Images */}
               <div className="space-y-4">
-                <div className="aspect-square rounded-2xl overflow-hidden shadow-lg">
+                <div className="aspect-square rounded-xl sm:rounded-2xl overflow-hidden shadow-lg">
                   <img
                     src={product.mainImage}
                     alt={product.name}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-3 gap-3 sm:gap-4">
                   {product.gallery.map((image, index) => (
                     <div key={index} className="aspect-square rounded-lg overflow-hidden shadow-md">
                       <img
@@ -437,22 +437,22 @@ const ProductDetails = () => {
               </div>
 
               {/* Product Info */}
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 <div>
-                  <Badge variant="secondary" className="mb-2 capitalize">
+                  <Badge variant="secondary" className="mb-2 capitalize text-xs sm:text-sm">
                     {product.category.replace('-', ' ')}
                   </Badge>
-                  <h1 className="text-4xl font-bold text-foreground mb-4">{product.name}</h1>
-                  <p className="text-lg text-muted-foreground leading-relaxed">{product.description}</p>
+                  <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-3 sm:mb-4">{product.name}</h1>
+                  <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed">{product.description}</p>
                 </div>
 
                 {/* Key Features */}
                 <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-3">Key Features</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3">Key Features</h3>
                   <ul className="space-y-2">
                     {product.features.map((feature, index) => (
-                      <li key={index} className="flex items-center text-muted-foreground">
-                        <span className="w-2 h-2 bg-primary rounded-full mr-3" />
+                      <li key={index} className="flex items-center text-xs sm:text-sm text-muted-foreground">
+                        <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full mr-2 sm:mr-3" />
                         {feature}
                       </li>
                     ))}
@@ -461,25 +461,25 @@ const ProductDetails = () => {
 
                 {/* Quick Specs */}
                 <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-3">Quick Specifications</h3>
-                  <div className="grid grid-cols-2 gap-4">
+                  <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3">Quick Specifications</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     {Object.entries(product.details.specifications).slice(0, 4).map(([key, value]) => (
                       <div key={key} className="bg-card p-3 rounded-lg">
-                        <div className="text-sm text-muted-foreground capitalize">
+                        <div className="text-xs sm:text-sm text-muted-foreground capitalize">
                           {key.replace(/([A-Z])/g, ' $1').trim()}
                         </div>
-                        <div className="font-semibold text-foreground">{value}</div>
+                        <div className="font-semibold text-foreground text-sm sm:text-base">{value}</div>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" className="btn-primary">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                  <Button size="lg" className="btn-primary w-full sm:w-auto">
                     Request Quotation
                   </Button>
-                  <Button size="lg" variant="outline">
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto">
                     Download Data Sheet
                   </Button>
                 </div>
@@ -489,36 +489,36 @@ const ProductDetails = () => {
         </section>
 
         {/* Detailed Information */}
-        <section className="py-16 bg-card/30">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <section className="py-8 sm:py-12 lg:py-16 bg-card/30">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
               {/* Detailed Description */}
               <div className="lg:col-span-2">
-                <h2 className="text-3xl font-bold text-foreground mb-6">Product Details</h2>
-                <div className="prose prose-lg max-w-none">
-                  <p className="text-muted-foreground leading-relaxed mb-6">{product.longDescription}</p>
+                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 sm:mb-6">Product Details</h2>
+                <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 sm:mb-6">{product.longDescription}</p>
                   
                   {/* Specifications Table */}
-                  <div className="bg-card rounded-lg p-6 mb-6">
-                    <h3 className="text-xl font-semibold text-foreground mb-4">Technical Specifications</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="bg-card rounded-lg p-4 sm:p-6 mb-4 sm:mb-6">
+                    <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3 sm:mb-4">Technical Specifications</h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                       {Object.entries(product.details.specifications).map(([key, value]) => (
                         <div key={key} className="flex justify-between py-2 border-b border-border">
-                          <span className="text-muted-foreground capitalize">
+                          <span className="text-xs sm:text-sm text-muted-foreground capitalize">
                             {key.replace(/([A-Z])/g, ' $1').trim()}
                           </span>
-                          <span className="font-medium">{value}</span>
+                          <span className="font-medium text-xs sm:text-sm">{value}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
                   {/* Applications */}
-                  <div className="bg-card rounded-lg p-6 mb-6">
-                    <h3 className="text-xl font-semibold text-foreground mb-4">Applications</h3>
+                  <div className="bg-card rounded-lg p-4 sm:p-6 mb-4 sm:mb-6">
+                    <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3 sm:mb-4">Applications</h3>
                     <div className="flex flex-wrap gap-2">
                       {product.details.applications.map((app, index) => (
-                        <Badge key={index} variant="secondary" className="badge-animate">
+                        <Badge key={index} variant="secondary" className="badge-animate text-xs">
                           {app}
                         </Badge>
                       ))}
@@ -526,11 +526,11 @@ const ProductDetails = () => {
                   </div>
 
                   {/* Certifications */}
-                  <div className="bg-card rounded-lg p-6">
-                    <h3 className="text-xl font-semibold text-foreground mb-4">Certifications</h3>
+                  <div className="bg-card rounded-lg p-4 sm:p-6">
+                    <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3 sm:mb-4">Certifications</h3>
                     <div className="flex flex-wrap gap-2">
                       {product.details.certifications.map((cert, index) => (
-                        <Badge key={index} variant="outline" className="badge-animate">
+                        <Badge key={index} variant="outline" className="badge-animate text-xs">
                           {cert}
                         </Badge>
                       ))}
@@ -540,15 +540,15 @@ const ProductDetails = () => {
               </div>
 
               {/* Sidebar */}
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {/* Product Benefits */}
                 <Card>
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-semibold text-foreground mb-4">Benefits</h3>
+                  <CardContent className="p-4 sm:p-6">
+                    <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3 sm:mb-4">Benefits</h3>
                     <ul className="space-y-2">
                       {product.benefits.map((benefit, index) => (
-                        <li key={index} className="flex items-start text-muted-foreground">
-                          <span className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0" />
+                        <li key={index} className="flex items-start text-xs sm:text-sm text-muted-foreground">
+                          <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full mr-2 sm:mr-3 mt-1.5 sm:mt-2 flex-shrink-0" />
                           {benefit}
                         </li>
                       ))}
@@ -558,15 +558,15 @@ const ProductDetails = () => {
 
                 {/* Nutritional Information */}
                 <Card>
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-semibold text-foreground mb-4">Nutritional Information</h3>
+                  <CardContent className="p-4 sm:p-6">
+                    <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3 sm:mb-4">Nutritional Information</h3>
                     <div className="space-y-2">
                       {Object.entries(product.details.nutritionalInfo || {}).map(([key, value]) => (
                         <div key={key} className="flex justify-between py-1">
-                          <span className="text-muted-foreground capitalize">
+                          <span className="text-xs sm:text-sm text-muted-foreground capitalize">
                             {key.replace(/([A-Z])/g, ' $1').trim()}
                           </span>
-                          <span className="font-medium">{value}</span>
+                          <span className="font-medium text-xs sm:text-sm">{value}</span>
                         </div>
                       ))}
                     </div>
@@ -575,20 +575,20 @@ const ProductDetails = () => {
 
                 {/* Product Details */}
                 <Card>
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-semibold text-foreground mb-4">Product Details</h3>
+                  <CardContent className="p-4 sm:p-6">
+                    <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3 sm:mb-4">Product Details</h3>
                     <div className="space-y-3">
                       <div>
-                        <span className="text-muted-foreground">Origin:</span>
-                        <div className="font-medium">{product.details.origin}</div>
+                        <span className="text-xs sm:text-sm text-muted-foreground">Origin:</span>
+                        <div className="font-medium text-xs sm:text-sm">{product.details.origin}</div>
                       </div>
                       <div>
-                        <span className="text-muted-foreground">Processing:</span>
-                        <div className="font-medium">{product.details.processing}</div>
+                        <span className="text-xs sm:text-sm text-muted-foreground">Processing:</span>
+                        <div className="font-medium text-xs sm:text-sm">{product.details.processing}</div>
                       </div>
                       <div>
-                        <span className="text-muted-foreground">Packaging:</span>
-                        <div className="font-medium">{product.details.packaging}</div>
+                        <span className="text-xs sm:text-sm text-muted-foreground">Packaging:</span>
+                        <div className="font-medium text-xs sm:text-sm">{product.details.packaging}</div>
                       </div>
                     </div>
                   </CardContent>
@@ -599,17 +599,17 @@ const ProductDetails = () => {
         </section>
 
         {/* Call to Action */}
-        <section className="py-16 bg-gradient-to-r from-primary/10 to-secondary/10">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-4 gradient-text">Ready to Order?</h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+        <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-r from-primary/10 to-secondary/10">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 gradient-text">Ready to Order?</h2>
+            <p className="text-sm sm:text-base lg:text-lg text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
               Get in touch with us to discuss your requirements and receive a detailed quotation for {product.name}.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="btn-primary">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+              <Button size="lg" className="btn-primary w-full sm:w-auto">
                 Request Quotation
               </Button>
-              <Button size="lg" variant="outline" onClick={() => navigate('/contact')}>
+              <Button size="lg" variant="outline" onClick={() => navigate('/contact')} className="w-full sm:w-auto">
                 Contact Us
               </Button>
             </div>
