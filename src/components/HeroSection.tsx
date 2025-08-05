@@ -23,9 +23,9 @@ const HeroSection = () => {
   }, [heroImages.length]);
 
   return (
-    <section className="relative w-full min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 overflow-hidden">
+    <section className="relative w-full min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 overflow-hidden z-0">
       {/* Background Decorative Elements */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-0">
         <div className="absolute top-20 left-4 sm:left-10 w-16 h-16 sm:w-20 sm:h-20 opacity-10">
           <img src="https://aquaconnectexim.com/wp-content/uploads/2023/02/Group-1.png" alt="spice decoration" className="w-full h-full" />
         </div>
@@ -65,9 +65,9 @@ const HeroSection = () => {
           </div>
 
           {/* Right Image Slideshow */}
-          <div className="flex-1 relative animate-in slide-in-from-right duration-1000 delay-300 w-full max-w-md lg:max-w-xl mx-auto">
+          <div className="flex-1 relative animate-in slide-in-from-right duration-1000 delay-300 w-full max-w-md lg:max-w-xl mx-auto z-10">
             <div className="relative w-full">
-              <div className="relative h-64 sm:h-80 md:h-96 lg:h-[600px] overflow-hidden rounded-2xl lg:rounded-3xl shadow-2xl">
+              <div className="relative h-64 sm:h-80 md:h-96 lg:h-[600px] overflow-hidden rounded-2xl lg:rounded-3xl shadow-2xl z-10">
                 {heroImages.map((image, index) => (
                   <div
                     key={index}
@@ -106,7 +106,7 @@ const HeroSection = () => {
                 onClick={() => setCurrentIndex((prev) => 
                   prev === 0 ? heroImages.length - 1 : prev - 1
                 )}
-                className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-2 sm:p-3 shadow-lg transition-all duration-300 hover:scale-110"
+                className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-2 sm:p-3 shadow-lg transition-all duration-300 hover:scale-110 z-20"
               >
                 <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -117,7 +117,7 @@ const HeroSection = () => {
                 onClick={() => setCurrentIndex((prev) => 
                   (prev + 1) % heroImages.length
                 )}
-                className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-2 sm:p-3 shadow-lg transition-all duration-300 hover:scale-110"
+                className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-2 sm:p-3 shadow-lg transition-all duration-300 hover:scale-110 z-20"
               >
                 <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
