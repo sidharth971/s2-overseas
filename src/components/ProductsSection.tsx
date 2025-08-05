@@ -41,7 +41,7 @@ const ProductsSection = () => {
     {
       id: 8,
       name: "Kondapalli Toys",
-      image: "/assets/products/Kondapalli-Toys.webp",
+      image: "/assets/products/kondapalli-toys/Kondapalli-Toys.webp",
       link: "#"
     }
   ];

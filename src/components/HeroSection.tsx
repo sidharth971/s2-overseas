@@ -9,7 +9,7 @@ const HeroSection = () => {
   const heroImages = [
     "https://aquaconnectexim.com/wp-content/uploads/2024/12/B2B-Spices-768x580.webp",
     "/assets/products/Gemini_Generated_Image_4b6i9r4b6i9r4b6i.png",
-    "/assets/products/Kondapalli-Toys.webp",
+    "/assets/products/kondapalli-toys/Kondapalli-Toys.webp",
     "/assets/products/Banana-Fiber.webp",
     "/assets/products/moringa-powder-application.jpg"
   ];

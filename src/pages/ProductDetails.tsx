@@ -322,6 +322,58 @@ const ProductDetails = () => {
     },
     {
       id: 6,
+      name: "Kondapalli Toys",
+      category: "handicrafts",
+      mainImage: "/assets/products/kondapalli-toys/Kondapalli-Toys.webp",
+      gallery: [
+        "/assets/products/kondapalli-toys/kondapalli-toys-1.jpg",
+        "/assets/products/kondapalli-toys/kondapalli-toys-2.jpg",
+        "/assets/products/kondapalli-toys/kondapalli-toys-3.jpg"
+      ],
+      description: "Traditional wooden toys from Kondapalli village, handcrafted by skilled artisans using age-old techniques. 🌱 Eco-friendly and sustainable.",
+      longDescription: "Our Kondapalli toys are crafted by skilled artisans from the Kondapalli village in Andhra Pradesh, using traditional techniques passed down through generations. These toys are made from soft wood and painted with non-toxic colors, making them safe for children and environmentally friendly. Each piece is 100% biodegradable and supports sustainable practices.",
+      isEcoFriendly: true,
+      details: {
+        origin: "Kondapalli, Andhra Pradesh, India",
+        processing: "Hand-carved and painted",
+        packaging: "Gift boxes, bulk packaging",
+        certifications: ["GI Tag", "Handmade", "Traditional", "Eco-friendly"],
+        applications: ["Children's toys", "Collectibles", "Gifts", "Decor", "Educational"],
+        specifications: {
+          material: "Soft wood (Tella Poniki)",
+          finish: "Non-toxic paints",
+          size: "Various sizes available",
+          craftsmanship: "Hand-carved",
+          sustainability: "100% biodegradable",
+          safety: "Child-safe materials"
+        },
+        environmentalInfo: {
+          biodegradability: "100%",
+          carbonFootprint: "Minimal",
+          waterUsage: "Low",
+          pesticideFree: "Yes",
+          renewable: "Yes"
+        }
+      },
+      features: [
+        "Traditional craftsmanship",
+        "Non-toxic and child-safe",
+        "Cultural heritage preservation",
+        "Supports local artisans",
+        "100% biodegradable",
+        "Eco-friendly materials"
+      ],
+      benefits: [
+        "Promotes traditional Indian culture",
+        "Safe for children of all ages",
+        "Educational and developmental value",
+        "Eco-friendly and sustainable",
+        "Supports rural livelihoods",
+        "Perfect for gifts and collections"
+      ]
+    },
+    {
+      id: 7,
       name: "Black Tea Powder",
       category: "beverages",
       mainImage: "/assets/products/Black-Tea-Powder.webp",
@@ -439,9 +491,16 @@ const ProductDetails = () => {
               {/* Product Info */}
               <div className="space-y-4 sm:space-y-6">
                 <div>
-                  <Badge variant="secondary" className="mb-2 capitalize text-xs sm:text-sm">
-                    {product.category.replace('-', ' ')}
-                  </Badge>
+                  <div className="flex flex-wrap gap-2 mb-2">
+                    <Badge variant="secondary" className="capitalize text-xs sm:text-sm">
+                      {product.category.replace('-', ' ')}
+                    </Badge>
+                    {product.isEcoFriendly && (
+                      <Badge variant="default" className="bg-green-500 hover:bg-green-600 text-xs sm:text-sm animate-pulse">
+                        🌱 Eco-Friendly
+                      </Badge>
+                    )}
+                  </div>
                   <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-3 sm:mb-4">{product.name}</h1>
                   <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed">{product.description}</p>
                 </div>

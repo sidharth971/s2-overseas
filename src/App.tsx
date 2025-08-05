@@ -10,6 +10,8 @@ import About from "./pages/About";
 import Certificates from "./pages/Certificates";
 import Products from "./pages/Products";
 import ProductDetails from "./pages/ProductDetails";
+import KondapalliToys from "./pages/KondapalliToys";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +21,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/contact" element={<Contact />} />
@@ -26,6 +29,7 @@ const App = () => (
           <Route path="/certificates" element={<Certificates />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:productId" element={<ProductDetails />} />
+          <Route path="/kondapalli-toys" element={<KondapalliToys />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -176,9 +176,10 @@ const Products = () => {
       id: 6,
       name: "Kondapalli Toys",
       category: "handicrafts",
-      image: "/assets/products/Kondapalli-Toys.webp",
+      image: "/assets/products/kondapalli-toys/Kondapalli-Toys.webp",
       newImage: "/assets/products/kondapalli-toys-detail.jpg",
-      description: "Traditional wooden toys from Kondapalli village, handcrafted by skilled artisans using age-old techniques.",
+      description: "Traditional wooden toys from Kondapalli village, handcrafted by skilled artisans using age-old techniques. 🌱 Eco-friendly and sustainable.",
+      isEcoFriendly: true,
       details: {
         origin: "Kondapalli, Andhra Pradesh, India",
         processing: "Hand-carved and painted",
@@ -305,9 +306,16 @@ const Products = () => {
                       <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
                         {product.name}
                       </h3>
-                      <Badge variant="secondary" className="capitalize badge-animate text-xs">
-                        {product.category.replace('-', ' ')}
-                      </Badge>
+                      <div className="flex gap-2">
+                        <Badge variant="secondary" className="capitalize badge-animate text-xs">
+                          {product.category.replace('-', ' ')}
+                        </Badge>
+                        {product.isEcoFriendly && (
+                          <Badge variant="default" className="bg-green-500 hover:bg-green-600 badge-animate text-xs animate-pulse">
+                            🌱 Eco-Friendly
+                          </Badge>
+                        )}
+                      </div>
                     </div>
 
                     <p className="text-sm sm:text-base text-muted-foreground mb-4 line-clamp-3">
@@ -369,7 +377,13 @@ const Products = () => {
                     {/* CTA Button */}
                     <Button 
                       className="w-full group-hover:bg-primary/90 transition-colors text-sm sm:text-base"
-                      onClick={() => navigate(`/products/${product.id}`)}
+                      onClick={() => {
+                        if (product.name === "Kondapalli Toys") {
+                          navigate('/kondapalli-toys');
+                        } else {
+                          navigate(`/products/${product.id}`);
+                        }
+                      }}
                     >
                       View Details
                     </Button>
