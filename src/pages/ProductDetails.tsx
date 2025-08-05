@@ -4,10 +4,14 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 const ProductDetails = () => {
   const { productId } = useParams();
   const navigate = useNavigate();
+
+  // Scroll to top when component mounts
+  useScrollToTop([productId]);
 
   const products = [
     {

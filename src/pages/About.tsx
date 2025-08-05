@@ -4,8 +4,18 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Users, Scale, Target, Award, Globe, Heart, Shield, TrendingUp } from "lucide-react";
+import { useEffect } from "react";
 
 const About = () => {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }, []);
+
   const pillars = [
     {
       id: 1,
