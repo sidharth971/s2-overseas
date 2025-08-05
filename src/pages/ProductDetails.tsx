@@ -534,7 +534,7 @@ const ProductDetails = () => {
                       {product.category.replace('-', ' ')}
                     </Badge>
                     {product.isEcoFriendly && (
-                      <Badge variant="default" className="bg-green-500 hover:bg-green-600 text-xs sm:text-sm animate-pulse">
+                      <Badge variant="default" className="bg-green-600 hover:bg-green-700 text-xs sm:text-sm font-semibold animate-pulse text-white shadow-sm">
                         🌱 Eco-Friendly
                       </Badge>
                     )}
