@@ -573,7 +573,7 @@ const ProductDetails = () => {
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                  <Button size="lg" className="btn-primary w-full sm:w-auto">
+                  <Button size="lg" className="btn-primary w-full sm:w-auto" onClick={() => navigate('/contact')}>
                     Request Quotation
                   </Button>
                   <Button size="lg" variant="outline" className="w-full sm:w-auto">
@@ -703,7 +703,7 @@ const ProductDetails = () => {
               Get in touch with us to discuss your requirements and receive a detailed quotation for {product.name}.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              <Button size="lg" className="btn-primary w-full sm:w-auto">
+              <Button size="lg" className="btn-primary w-full sm:w-auto" onClick={() => navigate('/contact')}>
                 Request Quotation
               </Button>
               <Button size="lg" variant="outline" onClick={() => navigate('/contact')} className="w-full sm:w-auto">

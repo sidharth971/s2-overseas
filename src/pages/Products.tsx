@@ -415,7 +415,7 @@ const Products = () => {
                 for any of our premium products.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                <Button size="lg" className="btn-primary w-full sm:w-auto">
+                <Button size="lg" className="btn-primary w-full sm:w-auto" onClick={() => navigate('/contact')}>
                   Request Quotation
                 </Button>
                 <Button size="lg" variant="outline" className="w-full sm:w-auto">

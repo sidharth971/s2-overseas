@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const RecruitmentSection = () => {
+  const navigate = useNavigate();
   return (
     <section className="relative w-full py-12 sm:py-16 bg-gradient-to-r from-orange-50 via-yellow-50 to-orange-100 overflow-hidden">
       {/* Background Decorative Elements */}
@@ -21,34 +23,36 @@ const RecruitmentSection = () => {
 
       <div className="w-full px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="w-full max-w-4xl mx-auto space-y-4 sm:space-y-6 animate-in slide-in-from-bottom duration-1000">
-          <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-semibold mb-4">
-            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-orange-500 rounded-full animate-pulse"></span>
-            We're Hiring
+          <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-semibold mb-4">
+            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full animate-pulse"></span>
+            Global Export Partner
           </div>
           
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800">
             Join us as{" "}
-            <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Global Sales Agent</span>
+            <span className="bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent">Export Partner</span>
           </h2>
           
           <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-2xl mx-auto px-4">
-            Seeking experienced international spice sales agents for B2B (2-3 years) to expand our global business. 
-            Help deliver premium-quality Indian spices worldwide!
+            Connect with us to explore partnership opportunities in exporting premium Indian spices and eco-friendly products worldwide. 
+            Let's build sustainable business relationships together!
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mt-6 sm:mt-8">
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold px-6 sm:px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg w-full sm:w-auto"
+              className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-semibold px-6 sm:px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg w-full sm:w-auto"
+              onClick={() => navigate('/contact')}
             >
-              Join Our Team
+              Join Us
             </Button>
             <Button 
               variant="outline"
               size="lg"
-              className="border-2 border-orange-300 text-orange-600 hover:bg-orange-50 hover:border-orange-400 font-semibold px-6 sm:px-8 py-3 rounded-lg transition-all duration-300 w-full sm:w-auto"
+              className="border-2 border-green-300 text-green-600 hover:bg-green-50 hover:border-green-400 font-semibold px-6 sm:px-8 py-3 rounded-lg transition-all duration-300 w-full sm:w-auto"
+              onClick={() => navigate('/contact')}
             >
-              Learn More
+              Request Quotation
             </Button>
           </div>
         </div>
