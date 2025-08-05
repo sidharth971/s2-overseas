@@ -11,20 +11,40 @@ const ProductDetails = () => {
   const { productId } = useParams();
   const navigate = useNavigate();
 
-  // Scroll to top when component mounts
-  useScrollToTop([productId]);
-
-  // Additional scroll fix for product details
+  // Force scroll to top immediately and after a delay
   useEffect(() => {
-    const timer = setTimeout(() => {
+    // Immediate scroll using multiple methods
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    
+    // Force scroll after component renders
+    const timer1 = setTimeout(() => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+    }, 50);
+    
+    // Another scroll after DOM updates
+    const timer2 = setTimeout(() => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+    }, 200);
+    
+    // Final scroll to ensure it works
+    const timer3 = setTimeout(() => {
       window.scrollTo({
         top: 0,
         left: 0,
-        behavior: 'smooth'
+        behavior: 'instant'
       });
-    }, 100);
+      document.documentElement.scrollTop = 0;
+    }, 500);
     
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      clearTimeout(timer3);
+    };
   }, [productId]);
 
   const products = [

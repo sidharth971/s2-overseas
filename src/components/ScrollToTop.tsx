@@ -5,17 +5,38 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Force scroll to top with smooth behavior
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
+    // Immediate scroll using multiple methods
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
     
-    // Also try immediate scroll as fallback
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 100);
+    // Force scroll multiple times to ensure it works
+    const timers = [
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+      }, 50),
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+      }, 100),
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+      }, 200),
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'instant'
+        });
+        document.documentElement.scrollTop = 0;
+      }, 300)
+    ];
+    
+    return () => {
+      timers.forEach(timer => clearTimeout(timer));
+    };
   }, [pathname]);
 
   return null;
