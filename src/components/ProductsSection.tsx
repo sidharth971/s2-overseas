@@ -1,48 +1,51 @@
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const ProductsSection = () => {
+  const navigate = useNavigate();
+
   const products = [
     {
-      id: 2,
+      id: 1,
       name: "Banana Powder",
       image: "/assets/products/Banana-Powder.webp",
-      link: "#"
-    },
-    {
-      id: 9,
-      name: "Moringa Powder",
-      image: "/assets/products/moringa-powder-packaging.jpg",
-      link: "#"
-    },
-    {
-      id: 3,
-      name: "Turmeric Powder",
-      image: "/assets/products/Turmeric-Powder.webp",
-      link: "#"
-    },
-    {
-      id: 5,
-      name: "Guntur Red Chilli Powder",
-      image: "/assets/products/Red-Chilli-Powder.webp",
-      link: "#"
-    },
-    {
-      id: 6,
-      name: "Cumin Seed",
-      image: "/assets/products/Cumin-Seed.webp",
-      link: "#"
-    },
-    {
-      id: 7,
-      name: "Banana Fiber",
-      image: "/assets/products/Banana-Fiber.webp",
-      link: "#"
+      productId: 1
     },
     {
       id: 8,
+      name: "Moringa Powder",
+      image: "/assets/products/moringa-powder-packaging.jpg",
+      productId: 8
+    },
+    {
+      id: 2,
+      name: "Turmeric Powder",
+      image: "/assets/products/Turmeric-Powder.webp",
+      productId: 2
+    },
+    {
+      id: 3,
+      name: "Guntur Red Chilli Powder",
+      image: "/assets/products/Red-Chilli-Powder.webp",
+      productId: 3
+    },
+    {
+      id: 4,
+      name: "Cumin Seed",
+      image: "/assets/products/Cumin-Seed.webp",
+      productId: 4
+    },
+    {
+      id: 5,
+      name: "Banana Fiber",
+      image: "/assets/products/Banana-Fiber.webp",
+      productId: 5
+    },
+    {
+      id: 6,
       name: "Kondapalli Toys",
       image: "/assets/products/kondapalli-toys/Kondapalli-Toys.webp",
-      link: "#"
+      productId: 6
     }
   ];
 
@@ -65,8 +68,15 @@ const ProductsSection = () => {
             {products.map((product, index) => (
               <div 
                 key={product.id} 
-                className="group text-center animate-in fade-in duration-1000 card-hover"
+                className="group text-center animate-in fade-in duration-1000 card-hover cursor-pointer"
                 style={{ animationDelay: `${index * 100}ms` }}
+                onClick={() => {
+                  if (product.name === "Kondapalli Toys") {
+                    navigate('/kondapalli-toys');
+                  } else {
+                    navigate(`/products/${product.productId}`);
+                  }
+                }}
               >
                 <div className="mb-4 sm:mb-6 overflow-hidden rounded-xl sm:rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300 bg-white">
                   <img
@@ -76,9 +86,7 @@ const ProductsSection = () => {
                   />
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold text-foreground group-hover:text-primary transition-colors px-2">
-                  <a href={product.link} className="hover:underline font-medium">
-                    {product.name}
-                  </a>
+                  {product.name}
                 </h3>
               </div>
             ))}
@@ -89,7 +97,7 @@ const ProductsSection = () => {
             <Button 
               size="lg"
               className="btn-primary"
-              onClick={() => window.location.href = '/products'}
+              onClick={() => navigate('/products')}
             >
               View All Products
             </Button>

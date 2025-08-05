@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -12,6 +13,19 @@ const ProductDetails = () => {
 
   // Scroll to top when component mounts
   useScrollToTop([productId]);
+
+  // Additional scroll fix for product details
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }, 100);
+    
+    return () => clearTimeout(timer);
+  }, [productId]);
 
   const products = [
     {
