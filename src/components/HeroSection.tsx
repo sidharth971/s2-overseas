@@ -37,8 +37,8 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="w-full h-full flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20">
-        <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+      <div className="w-full h-full flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 lg:pt-32">
+        <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 pb-8 sm:pb-12">
           {/* Left Content */}
           <div className="flex-1 space-y-6 sm:space-y-8 animate-in slide-in-from-left duration-1000 text-center lg:text-left">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-shadow-lg">
@@ -65,7 +65,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right Image Slideshow */}
-          <div className="flex-1 relative animate-in slide-in-from-right duration-1000 delay-300 w-full max-w-md lg:max-w-xl mx-auto z-10">
+          <div className="flex-1 relative animate-in slide-in-from-right duration-1000 delay-300 w-full max-w-md lg:max-w-xl mx-auto z-10 mt-4 sm:mt-6">
             <div className="relative w-full">
               <div className="relative h-64 sm:h-80 md:h-96 lg:h-[600px] overflow-hidden rounded-2xl lg:rounded-3xl shadow-2xl z-10">
                 {heroImages.map((image, index) => (
