@@ -335,8 +335,8 @@ const About = () => {
               <Button size="lg" variant="outline">
                 Contact Us
               </Button>
-            </div>
           </div>
+        </div>
         </section>
       </main>
       <Footer />
