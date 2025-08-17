@@ -158,6 +158,8 @@ const Contact = () => {
                     Bangalore - 560100, India
                   </p>
                 </div>
+                {/* gradient glow under card */}
+                <div className="pointer-events-none absolute -bottom-4 left-8 right-8 h-4 rounded-full bg-gradient-to-r from-blue-300/60 to-purple-300/60 blur-md opacity-80" />
               </div>
 
               {/* Phone Numbers */}
@@ -168,10 +170,11 @@ const Contact = () => {
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">Phone Numbers</h3>
                   <div className="space-y-2">
-                    <p className="text-sm sm:text-base text-gray-700 font-medium">+91 9160040202</p>
-                    <p className="text-sm sm:text-base text-gray-700 font-medium">+91 8310439092</p>
+                    <a href="tel:+919160040202" className="inline-block text-sm sm:text-base text-gray-700 font-medium hover:text-blue-600 transition-colors">+91 9160040202</a>
+                    <a href="tel:+918310439092" className="inline-block text-sm sm:text-base text-gray-700 font-medium hover:text-blue-600 transition-colors">+91 8310439092</a>
                   </div>
                 </div>
+                <div className="pointer-events-none absolute -bottom-4 left-8 right-8 h-4 rounded-full bg-gradient-to-r from-green-300/60 to-blue-300/60 blur-md opacity-80" />
               </div>
 
               {/* Email Addresses */}
@@ -182,10 +185,11 @@ const Contact = () => {
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">Email Addresses</h3>
                   <div className="space-y-2">
-                    <p className="text-sm sm:text-base text-gray-700 font-medium">sales@thrayana.com</p>
-                    <p className="text-sm sm:text-base text-gray-700 font-medium">office@thrayana.com</p>
+                    <a href="mailto:sales@thrayana.com" className="inline-block text-sm sm:text-base text-gray-700 font-medium hover:text-blue-600 transition-colors">sales@thrayana.com</a>
+                    <a href="mailto:office@thrayana.com" className="inline-block text-sm sm:text-base text-gray-700 font-medium hover:text-blue-600 transition-colors">office@thrayana.com</a>
                   </div>
                 </div>
+                <div className="pointer-events-none absolute -bottom-4 left-8 right-8 h-4 rounded-full bg-gradient-to-r from-orange-300/60 to-rose-300/60 blur-md opacity-80" />
               </div>
             </div>
 
