@@ -141,10 +141,10 @@ const Contact = () => {
         <div className="w-full px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
           <div className="w-full max-w-7xl mx-auto">
             {/* Contact Information Section */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16 items-stretch">
               {/* Office Address */}
-              <div className="group relative p-[1px] rounded-2xl bg-gradient-to-br from-blue-200 to-purple-200">
-                <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 border border-gray-100 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-0.5">
+              <div className="group relative p-[1px] rounded-2xl bg-gradient-to-br from-blue-200 to-purple-200 h-full">
+                <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 border border-gray-100 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-0.5 h-full flex flex-col">
                   <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mb-4 sm:mb-6">
                     <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -163,8 +163,8 @@ const Contact = () => {
               </div>
 
               {/* Phone Numbers */}
-              <div className="group relative p-[1px] rounded-2xl bg-gradient-to-br from-green-200 to-blue-200">
-                <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 border border-gray-100 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-0.5">
+              <div className="group relative p-[1px] rounded-2xl bg-gradient-to-br from-green-200 to-blue-200 h-full">
+                <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 border border-gray-100 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-0.5 h-full flex flex-col">
                   <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 sm:mb-6">
                     <Phone className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                   </div>
@@ -178,8 +178,8 @@ const Contact = () => {
               </div>
 
               {/* Email Addresses */}
-              <div className="group relative p-[1px] rounded-2xl bg-gradient-to-br from-orange-200 to-rose-200 md:col-span-2 lg:col-span-1">
-                <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 border border-gray-100 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-0.5">
+              <div className="group relative p-[1px] rounded-2xl bg-gradient-to-br from-orange-200 to-rose-200 h-full">
+                <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 border border-gray-100 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-0.5 h-full flex flex-col">
                   <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mb-4 sm:mb-6">
                     <Mail className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                   </div>
