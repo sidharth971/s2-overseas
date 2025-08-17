@@ -109,7 +109,8 @@ const Header = () => {
           <div className="hidden lg:flex items-center gap-6">
             <div className="text-right text-base">
               <div className="font-bold text-foreground">+91 9160040202</div>
-              <div className="text-muted-foreground text-sm">sales@s2overseas.com</div>
+              <div className="font-bold text-foreground">+91 8310439092</div>
+              <div className="text-muted-foreground text-sm">sales@thrayana.com</div>
             </div>
             <Button className="btn-primary text-lg px-6 py-3">
               Get The Brochure
@@ -175,7 +176,8 @@ const Header = () => {
               <div className="pt-4 border-t">
                 <div className="space-y-2">
                   <div className="font-bold text-foreground">+91 9160040202</div>
-                  <div className="text-muted-foreground text-sm">sales@s2overseas.com</div>
+                  <div className="font-bold text-foreground">+91 8310439092</div>
+                  <div className="text-muted-foreground text-sm">sales@thrayana.com</div>
                 </div>
                 <Button className="btn-primary w-full mt-4">
                   Get The Brochure

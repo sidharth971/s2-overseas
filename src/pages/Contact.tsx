@@ -80,7 +80,7 @@ const Contact = () => {
                 <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">Phone Numbers</h3>
                 <div className="space-y-2">
                   <p className="text-sm sm:text-base text-gray-600">+91 9160040202</p>
-                  <p className="text-sm sm:text-base text-gray-600">+91 9822422584</p>
+                  <p className="text-sm sm:text-base text-gray-600">+91 8310439092</p>
                 </div>
               </div>
 
@@ -93,8 +93,8 @@ const Contact = () => {
                 </div>
                 <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">Email Addresses</h3>
                 <div className="space-y-2">
-                  <p className="text-sm sm:text-base text-gray-600">sales@s2overseas.com</p>
-                  <p className="text-sm sm:text-base text-gray-600">info@s2overseas.com</p>
+                  <p className="text-sm sm:text-base text-gray-600">sales@thrayana.com</p>
+                  <p className="text-sm sm:text-base text-gray-600">office@thrayana.com</p>
                 </div>
               </div>
             </div>

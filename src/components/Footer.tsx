@@ -52,12 +52,16 @@ const Footer = () => {
                 <span className="text-gray-300 font-medium">+91 9160040202</span>
               </div>
               <div className="flex items-center gap-2">
+                <span className="text-primary">📞</span>
+                <span className="text-gray-300 font-medium">+91 8310439092</span>
+              </div>
+              <div className="flex items-center gap-2">
                 <span className="text-primary">✉️</span>
-                <span className="text-gray-300 font-medium">sales@s2overseas.com</span>
+                <span className="text-gray-300 font-medium">sales@thrayana.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-primary">🌐</span>
-                <span className="text-gray-300 font-medium">s2overseas.com</span>
+                <span className="text-gray-300 font-medium">thrayana.com</span>
               </div>
             </div>
           </div>
