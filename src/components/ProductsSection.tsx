@@ -54,7 +54,7 @@ const ProductsSection = () => {
       <div className="w-full h-full flex flex-col justify-center px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20">
         <div className="text-center mb-12 sm:mb-16 animate-in fade-in duration-1000">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 text-shadow">
-            <span className="gradient-text">Product</span> We Export
+                            <span className="gradient-text">Products</span> We Export
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto font-medium px-4">
             Premium quality Indian spices, processed foods, and traditional handicrafts for global markets
