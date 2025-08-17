@@ -1,46 +1,253 @@
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { FileText, Eye, Calendar, Building2, Award, Shield, Globe } from "lucide-react";
 
 const Certificates = () => {
+  const [selectedCategory, setSelectedCategory] = useState("all");
+
+  // Certificate data structure for easy management
+  const certificates = [
+    {
+      id: 1,
+      title: "Certificate of Incorporation",
+      category: "legal",
+      type: "Company Registration",
+      description: "Official certificate of incorporation for Thrayana Private Limited, establishing our legal entity status under the Companies Act, 2013.",
+      longDescription: "This certificate confirms that Thrayana Private Limited has been duly incorporated under the Companies Act, 2013. It establishes our legal identity and authorizes us to conduct business operations in India and internationally. The certificate includes our Corporate Identity Number (CIN) and confirms our registration as a Private Limited Company.",
+      filePath: "/assets/certificates/Certificate_of_Incorporation_THRAYANA_PRIVATE_LIMITED.pdf",
+      issueDate: "14-Aug-2025",
+      validUntil: "Permanent (subject to compliance)",
+      issuingAuthority: "Ministry of Corporate Affairs, Government of India",
+      status: "Active",
+      icon: Building2,
+      tags: ["Legal", "Company Registration", "Government Approved", "CIN Registered"]
+    },
+
+  ];
+
+  const categories = [
+    { id: "all", name: "All Certificates", count: certificates.length },
+    { id: "legal", name: "Legal Documents", count: certificates.filter(c => c.category === "legal").length }
+  ];
+
+  const filteredCertificates = selectedCategory === "all" 
+    ? certificates 
+    : certificates.filter(cert => cert.category === selectedCategory);
+
+  const handlePreview = (filePath: string) => {
+    window.open(filePath, '_blank');
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <main className="pt-16 sm:pt-20 lg:pt-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-6 sm:mb-8 text-center sm:text-left">Our Certifications</h1>
-            <div className="grid gap-6 sm:gap-8">
-              <div className="bg-card p-4 sm:p-6 rounded-lg border">
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mb-4">
-                  <div className="bg-gradient-to-r from-red-500 to-red-600 text-white text-sm sm:text-lg px-3 sm:px-4 py-2 rounded-full font-semibold">
-                    ISO 22000:2025
-                  </div>
-                  <h2 className="text-xl sm:text-2xl font-semibold text-foreground">Food Safety Management</h2>
-                </div>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  Our ISO 22000:2025 certification ensures that we maintain the highest standards 
-                  of food safety throughout our entire supply chain, from sourcing to delivery.
-                </p>
-              </div>
-              
-              <div className="bg-card p-4 sm:p-6 rounded-lg border">
-                <h2 className="text-xl sm:text-2xl font-semibold text-foreground mb-3 sm:mb-4">Quality Assurance</h2>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  We implement rigorous quality control measures to ensure that all our products 
-                  meet international standards and customer expectations.
-                </p>
-              </div>
-              
-              <div className="bg-card p-4 sm:p-6 rounded-lg border">
-                <h2 className="text-xl sm:text-2xl font-semibold text-foreground mb-3 sm:mb-4">Export Compliance</h2>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  All our export processes comply with international trade regulations and 
-                  destination country requirements.
+        {/* Hero Section */}
+        <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-blue-600/10 relative overflow-hidden">
+          {/* Animated background elements */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-400/20 to-blue-400/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+          </div>
+          
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="animate-fade-in-up">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold gradient-text mb-4 sm:mb-6 text-shadow-lg">
+                  Our Certifications & Documents
+                </h1>
+                <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+                  We maintain the highest standards of quality, safety, and compliance. 
+                  Explore our comprehensive collection of certifications and legal documents.
                 </p>
               </div>
             </div>
           </div>
-        </div>
+        </section>
+
+        {/* Certificates Section */}
+        <section className="py-8 sm:py-12 lg:py-16">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-6xl mx-auto">
+                             {/* Category Tabs */}
+               <div className="mb-8 sm:mb-12">
+                 <Tabs value={selectedCategory} onValueChange={setSelectedCategory} className="w-full">
+                   <TabsList className="grid w-full grid-cols-2 h-auto bg-card/50 backdrop-blur-sm border border-blue-200/20 shadow-lg">
+                     {categories.map((category, index) => (
+                       <TabsTrigger 
+                         key={category.id} 
+                         value={category.id}
+                         className="flex flex-col items-center gap-1 py-3 sm:py-4 data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-600 data-[state=active]:to-purple-600 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:scale-105 transition-all duration-300 hover:scale-105 category-filter"
+                         style={{animationDelay: `${index * 0.1}s`}}
+                       >
+                         <span className="text-xs sm:text-sm font-medium">{category.name}</span>
+                         <Badge variant="secondary" className="text-xs badge-animate">
+                           {category.count}
+                         </Badge>
+                       </TabsTrigger>
+                     ))}
+                   </TabsList>
+                 </Tabs>
+               </div>
+
+                             {/* Certificates Grid */}
+               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+                 {filteredCertificates.map((certificate, index) => {
+                   const IconComponent = certificate.icon;
+                   return (
+                     <Card 
+                       key={certificate.id} 
+                       className="group hover:shadow-xl transition-all duration-500 border-2 hover:border-blue-300/50 bg-gradient-to-br from-white to-blue-50/30 backdrop-blur-sm product-card animate-fade-in-up"
+                       style={{animationDelay: `${index * 0.2}s`}}
+                     >
+                      <CardHeader className="pb-4">
+                        <div className="flex items-start justify-between">
+                                                     <div className="flex items-center gap-3">
+                             <div className="p-2 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg group-hover:from-blue-500/30 group-hover:to-purple-500/30 transition-all duration-300 transform group-hover:scale-110">
+                               <IconComponent className="w-5 h-5 text-blue-600 group-hover:text-purple-600 transition-colors duration-300" />
+                             </div>
+                            <div>
+                              <CardTitle className="text-lg sm:text-xl font-semibold text-foreground mb-1">
+                                {certificate.title}
+                              </CardTitle>
+                              <Badge variant="outline" className="text-xs">
+                                {certificate.type}
+                              </Badge>
+                            </div>
+                          </div>
+                                                     <Badge 
+                             variant={certificate.status === "Active" ? "default" : "secondary"}
+                             className={`text-xs ${certificate.status === "Active" ? "bg-gradient-to-r from-green-500 to-emerald-600 text-white" : ""}`}
+                           >
+                             {certificate.status}
+                           </Badge>
+                        </div>
+                      </CardHeader>
+                      
+                      <CardContent className="space-y-4">
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {certificate.description}
+                        </p>
+                        
+                        {/* Certificate Details */}
+                        <div className="grid grid-cols-2 gap-3 text-xs">
+                          <div>
+                            <span className="text-muted-foreground">Issue Date:</span>
+                            <div className="font-medium">{certificate.issueDate}</div>
+                          </div>
+                          <div>
+                            <span className="text-muted-foreground">Validity:</span>
+                            <div className="font-medium">{certificate.validUntil}</div>
+                          </div>
+                          <div className="col-span-2">
+                            <span className="text-muted-foreground">Issuing Authority:</span>
+                            <div className="font-medium text-xs">{certificate.issuingAuthority}</div>
+                          </div>
+                        </div>
+
+                                                 {/* Tags */}
+                         <div className="flex flex-wrap gap-1">
+                           {certificate.tags.map((tag, index) => (
+                             <Badge key={index} variant="secondary" className="text-xs badge-animate bg-blue-100 text-blue-700 hover:bg-blue-200 transition-all duration-200">
+                               {tag}
+                             </Badge>
+                           ))}
+                         </div>
+
+                                                 {/* Action Button */}
+                         <div className="pt-2">
+                           <Button 
+                             size="sm" 
+                             className="w-full text-xs btn-primary transform hover:scale-105 transition-all duration-300"
+                             onClick={() => handlePreview(certificate.filePath)}
+                           >
+                             <Eye className="w-3 h-3 mr-1" />
+                             View Document
+                           </Button>
+                         </div>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
+              </div>
+
+                             {/* Empty State */}
+               {filteredCertificates.length === 0 && (
+                 <div className="text-center py-12 animate-fade-in-up">
+                   <div className="w-16 h-16 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
+                     <FileText className="w-8 h-8 text-blue-600" />
+                   </div>
+                   <h3 className="text-lg font-semibold text-foreground mb-2">No certificates found</h3>
+                   <p className="text-muted-foreground">No certificates match the selected category.</p>
+                 </div>
+               )}
+            </div>
+          </div>
+        </section>
+
+        {/* Additional Information */}
+        <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-r from-blue-50/50 via-purple-50/50 to-blue-50/50 relative overflow-hidden">
+          {/* Animated background elements */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-blue-300/10 to-purple-300/10 rounded-full blur-2xl animate-pulse"></div>
+            <div className="absolute bottom-20 right-20 w-32 h-32 bg-gradient-to-tl from-purple-300/10 to-blue-300/10 rounded-full blur-2xl animate-pulse" style={{animationDelay: '2s'}}></div>
+          </div>
+          
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="max-w-4xl mx-auto">
+              <div className="animate-fade-in-up">
+                <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-6 sm:mb-8 text-center text-shadow">
+                  Why Our Certifications Matter
+                </h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                {[
+                  {
+                    title: "Quality Assurance",
+                    description: "Our certifications ensure that every product meets international quality standards, providing you with confidence in our commitment to excellence.",
+                    icon: "🏆"
+                  },
+                  {
+                    title: "Regulatory Compliance",
+                    description: "We maintain full compliance with all relevant regulations, ensuring smooth import/export processes and legal operations.",
+                    icon: "📋"
+                  },
+                  {
+                    title: "Food Safety",
+                    description: "Our food safety certifications guarantee that all products are processed and handled according to the highest safety standards.",
+                    icon: "🛡️"
+                  },
+                  {
+                    title: "International Standards",
+                    description: "We adhere to international standards, making our products suitable for global markets and diverse customer requirements.",
+                    icon: "🌍"
+                  }
+                ].map((item, index) => (
+                  <Card 
+                    key={index} 
+                    className="card-hover bg-gradient-to-br from-white to-blue-50/30 backdrop-blur-sm border border-blue-200/20 animate-fade-in-up"
+                    style={{animationDelay: `${index * 0.1}s`}}
+                  >
+                    <CardContent className="p-6">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="text-2xl">{item.icon}</div>
+                        <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
+                      </div>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {item.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>
