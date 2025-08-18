@@ -157,8 +157,8 @@ const KondapalliToys = () => {
                 and discuss your specific requirements.
               </p>
               <Button 
-                size="lg" 
-                className="btn-primary text-sm sm:text-base"
+                size="xl" 
+                className="btn-primary text-base sm:text-lg px-8 py-6 rounded-2xl shadow-xl hover:shadow-2xl"
                 onClick={() => navigate('/contact')}
               >
                 Contact Us for More Images

@@ -48,14 +48,14 @@ const Header = () => {
   return (
     <header className="w-full border-b bg-black/95 backdrop-blur supports-[backdrop-filter]:bg-black/80 fixed top-0 z-50">
       <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 sm:h-24 lg:h-28">
+        <div className="flex items-center justify-between h-16 sm:h-20 lg:h-24">
           {/* Brand */}
           <button
             className="group flex items-center gap-2 sm:gap-3 focus:outline-none"
             onClick={() => navigate('/')}
             aria-label="Go to home"
           >
-            <div className="h-16 sm:h-20 lg:h-24 flex items-center">
+            <div className="h-14 sm:h-16 lg:h-20 flex items-center">
               <img
                 src="/assets/brand/Thrayana.jpg"
                 alt="Thrayana Logo"
@@ -64,7 +64,7 @@ const Header = () => {
             </div>
             <div className="inline-block">
               <h1
-                className="whitespace-nowrap text-base sm:text-xl lg:text-4xl font-extrabold tracking-tight text-yellow-400"
+                className="whitespace-nowrap text-base sm:text-xl lg:text-4xl font-extrabold tracking-tight gradient-text"
                 style={{ fontFamily: 'Playfair Display, serif' }}
               >
                 THRAYANA PRIVATE LIMITED

@@ -63,7 +63,7 @@ const ProductDetails = () => {
       details: {
         origin: "Kerala, India",
         processing: "Dehydrated and finely ground",
-        packaging: "25kg bags, 1kg retail packs",
+        packaging: "Customized packaging",
         certifications: ["ISO 22000:2025", "HACCP", "FSSAI", "Organic"],
         applications: ["Bakery products", "Smoothies", "Nutritional supplements", "Baby food", "Protein shakes", "Ice cream"],
         specifications: {
@@ -115,7 +115,7 @@ const ProductDetails = () => {
       details: {
         origin: "Tamil Nadu, India",
         processing: "Shade-dried and finely ground",
-        packaging: "10kg, 25kg bags, 500g retail packs",
+        packaging: "Customized packaging",
         certifications: ["ISO 22000:2025", "Organic", "FSSAI"],
         applications: ["Smoothies", "Supplements", "Baking", "Soups", "Juices", "Energy bars"],
         specifications: {
@@ -168,7 +168,7 @@ const ProductDetails = () => {
       details: {
         origin: "Karnataka & Tamil Nadu, India",
         processing: "Sun-dried and ground",
-        packaging: "50kg bags, 5kg bulk packs",
+        packaging: "Customized packaging",
         certifications: ["ISO 22000:2025", "Organic", "FSSAI", "USDA Organic"],
         applications: ["Cooking", "Traditional medicine", "Cosmetics", "Food coloring", "Supplements", "Skincare"],
         specifications: {
@@ -220,7 +220,7 @@ const ProductDetails = () => {
       details: {
         origin: "Guntur, Andhra Pradesh, India",
         processing: "Sun-dried and ground",
-        packaging: "25kg bags, 1kg retail packs",
+        packaging: "Customized packaging",
         certifications: ["ISO 22000:2025", "FSSAI", "Spice Board", "GI Tag"],
         applications: ["Cooking", "Pickles", "Sauces", "Seasoning", "Marinades", "Traditional dishes"],
         specifications: {
@@ -271,7 +271,7 @@ const ProductDetails = () => {
       details: {
         origin: "Rajasthan & Gujarat, India",
         processing: "Cleaned and graded",
-        packaging: "50kg bags, 5kg bulk packs",
+        packaging: "Customized packaging",
         certifications: ["ISO 22000:2025", "FSSAI", "Spice Board", "Organic"],
         applications: ["Cooking", "Pickles", "Bread", "Seasoning", "Traditional medicine", "Essential oils"],
         specifications: {
@@ -323,7 +323,7 @@ const ProductDetails = () => {
       details: {
         origin: "Kerala & Karnataka, India",
         processing: "Extracted and processed",
-        packaging: "Bales of 100kg",
+        packaging: "Customized packaging",
         certifications: ["Organic", "Fair Trade", "Eco-friendly", "Handmade"],
         applications: ["Textiles", "Handicrafts", "Paper", "Ropes", "Bags", "Home decor"],
         specifications: {
@@ -576,9 +576,6 @@ const ProductDetails = () => {
                   <Button size="lg" className="btn-primary w-full sm:w-auto" onClick={() => navigate('/contact')}>
                     Request Quotation
                   </Button>
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                    Download Data Sheet
-                  </Button>
                 </div>
               </div>
             </div>
@@ -675,10 +672,6 @@ const ProductDetails = () => {
                   <CardContent className="p-4 sm:p-6">
                     <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3 sm:mb-4">Product Details</h3>
                     <div className="space-y-3">
-                      <div>
-                        <span className="text-xs sm:text-sm text-muted-foreground">Origin:</span>
-                        <div className="font-medium text-xs sm:text-sm">{product.details.origin}</div>
-                      </div>
                       <div>
                         <span className="text-xs sm:text-sm text-muted-foreground">Processing:</span>
                         <div className="font-medium text-xs sm:text-sm">{product.details.processing}</div>

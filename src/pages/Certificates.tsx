@@ -58,7 +58,7 @@ const Certificates = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
               <div className="animate-fade-in-up">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold gradient-text mb-4 sm:mb-6 text-shadow-lg">
+                <h1 className="text-4xl sm:text-4xl lg:text-4xl font-bold gradient-text mb-4 sm:mb-6 text-shadow-lg">
                   Our Certifications & Documents
                 </h1>
                 <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
@@ -82,11 +82,11 @@ const Certificates = () => {
                       <TabsTrigger 
                         key={category.id} 
                         value={category.id}
-                        className="flex flex-col items-center gap-1 py-3 sm:py-4 data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-600 data-[state=active]:to-purple-600 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:scale-105 transition-all duration-300 hover:scale-105 category-filter"
+                        className="flex flex-col items-center gap-1 py-3 sm:py-3 data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-600 data-[state=active]:to-purple-600 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:scale-105 transition-all duration-300 hover:scale-105 category-filter"
                         style={{animationDelay: `${index * 0.1}s`}}
                       >
-                        <span className="text-sm sm:text-base font-medium">{category.name}</span>
-                        <Badge variant="secondary" className="text-sm badge-animate">
+                        <span className="text-lg sm:text-xl font-medium">{category.name}</span>
+                        <Badge variant="secondary" className="text-base badge-animate">
                           {category.count}
                         </Badge>
                       </TabsTrigger>
