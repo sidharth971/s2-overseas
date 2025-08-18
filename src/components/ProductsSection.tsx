@@ -92,16 +92,7 @@ const ProductsSection = () => {
             ))}
           </div>
 
-          {/* View All Products Button */}
-          <div className="text-center animate-in fade-in duration-1000 delay-1000">
-            <Button 
-              size="lg"
-              className="btn-primary"
-              onClick={() => navigate('/products')}
-            >
-              View All Products
-            </Button>
-          </div>
+          {/* View All Products Button removed per request */}
         </div>
       </div>
     </section>

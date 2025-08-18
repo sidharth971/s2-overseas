@@ -35,7 +35,7 @@ const HeroSection = () => {
             </h1>
             
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0">
-              Spices are the heart of any dish, and India is a leading spices importer and exporter to global 
+              Spices are the heart of any dish, and India is a leading spices exporter to global 
               markets. Due to their rich flavor and superior quality, Indian spices are a staple in kitchens 
               across the globe. Indian spice exporters connect farmers to a global market, making India a 
               dominant player in the global trade of spices importers and exporters.

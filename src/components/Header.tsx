@@ -51,20 +51,20 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 sm:h-20 lg:h-24">
           {/* Brand */}
           <button
-            className="group flex items-center gap-2 sm:gap-3 focus:outline-none"
+            className="group flex items-center gap-2 sm:gap-3 focus:outline-none mr-2 sm:mr-4 lg:mr-6 xl:mr-8 min-w-0"
             onClick={() => navigate('/')}
             aria-label="Go to home"
           >
-            <div className="h-14 sm:h-16 lg:h-20 flex items-center">
+            <div className="h-12 sm:h-14 lg:h-16 xl:h-20 flex items-center">
               <img
                 src="/assets/brand/Thrayana.jpg"
                 alt="Thrayana Logo"
                 className="h-full w-auto object-contain"
               />
             </div>
-            <div className="inline-block">
+            <div className="inline-block max-w-[50vw] min-w-0 truncate">
               <h1
-                className="whitespace-nowrap text-base sm:text-xl lg:text-4xl font-extrabold tracking-tight gradient-text"
+                className="whitespace-nowrap text-sm sm:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-extrabold tracking-tight gradient-text"
                 style={{ fontFamily: 'Playfair Display, serif' }}
               >
                 THRAYANA PRIVATE LIMITED
@@ -75,45 +75,45 @@ const Header = () => {
           {/* Removed ISO certification badge and text */}
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
             <a 
               onClick={() => navigate('/')}
-              className={`${getLinkClasses('/')} text-2xl`}
+              className={`${getLinkClasses('/')} text-base xl:text-lg`}
             >
               Home
             </a>
             <a 
               onClick={() => navigate('/about')}
-              className={`${getLinkClasses('/about')} text-2xl`}
+              className={`${getLinkClasses('/about')} text-base xl:text-lg`}
             >
               About
             </a>
             <a 
               onClick={() => navigate('/products')}
-              className={`${getLinkClasses('/products')} text-2xl`}
+              className={`${getLinkClasses('/products')} text-base xl:text-lg`}
             >
               Products
             </a>
             <a 
               onClick={() => navigate('/certificates')}
-              className={`${getLinkClasses('/certificates')} text-2xl`}
+              className={`${getLinkClasses('/certificates')} text-base xl:text-lg`}
             >
               Certificates
             </a>
             <a 
               onClick={navigateToContact}
-              className={`${getLinkClasses('/contact')} text-2xl`}
+              className={`${getLinkClasses('/contact')} text-base xl:text-lg`}
             >
               Contact
             </a>
           </nav>
 
           {/* Desktop Contact Info & CTA */}
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden xl:flex items-center gap-6">
             <div className="text-right text-base">
-              <div className="font-bold text-white text-xl">+91 9160040202</div>
-              <div className="font-bold text-white text-xl">+91 8310439092</div>
-              <div className="text-gray-300 text-xl">sales@thrayana.com</div>
+              <div className="font-bold text-white">+91 9160040202</div>
+              <div className="font-bold text-white">+91 8310439092</div>
+              <div className="text-gray-300">sales@thrayana.com</div>
             </div>
             <Button className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-semibold text-lg px-6 py-3 rounded-2xl shadow-md">
               Get The Brochure
