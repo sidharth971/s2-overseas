@@ -30,7 +30,7 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className="flex-1 space-y-6 sm:space-y-8 animate-in slide-in-from-left duration-1000 text-center lg:text-left">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold leading-tight text-shadow-lg">
-              Indian Spices, Processed Food & Tea{" "}
+            Banana Fiber, Indian Spices, Processed Food & Tea{" "}
               <span className="gradient-text">Exporter</span> Globally
             </h1>
             

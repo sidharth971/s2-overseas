@@ -15,7 +15,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-gray-300 text-base leading-relaxed">
-              Leading Indian spices, processed food & tea exporter connecting global markets with premium quality products. 
+              Leading Banana Fiber, Indian spices, processed food & tea exporter connecting global markets with premium quality products. 
               We specialize in authentic Indian flavors and traditional handicrafts.
             </p>
           </div>
