@@ -7,14 +7,14 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-12 h-10 sm:w-14 sm:h-12 rounded-xl overflow-hidden bg-white/5 flex items-center justify-center shadow-lg">
-                <img src="/assets/brand/logo.jpg" alt="Thrayana Logo" className="h-full w-auto object-contain" />
+                <img src="/assets/brand/Thrayana.jpg" alt="Thrayana Logo" className="h-full w-auto object-contain" />
               </div>
               <div>
-                <h3 className="text-lg font-bold" style={{ fontFamily: 'Playfair Display, serif' }}>Thrayana PRIVATE LIMITED</h3>
-                <p className="text-sm text-gray-300 font-medium">Premium Export Solutions</p>
+                <h3 className="text-xl font-bold" style={{ fontFamily: 'Playfair Display, serif' }}>Thrayana PRIVATE LIMITED</h3>
+                <p className="text-base text-gray-300 font-medium">Premium Export Solutions</p>
               </div>
             </div>
-            <p className="text-gray-300 text-sm leading-relaxed">
+            <p className="text-gray-300 text-base leading-relaxed">
               Leading Indian spices, processed food & tea exporter connecting global markets with premium quality products. 
               We specialize in authentic Indian flavors and traditional handicrafts.
             </p>
@@ -22,8 +22,8 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-lg font-bold text-white">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
+            <h4 className="text-xl font-bold text-white">Quick Links</h4>
+            <ul className="space-y-2 text-base">
               <li><a href="#" className="text-gray-300 hover:text-primary transition-colors font-medium">Home</a></li>
               <li><a href="#" className="text-gray-300 hover:text-primary transition-colors font-medium">About Us</a></li>
               <li><a href="#" className="text-gray-300 hover:text-primary transition-colors font-medium">Products</a></li>
@@ -34,8 +34,8 @@ const Footer = () => {
 
           {/* Products */}
           <div className="space-y-4">
-            <h4 className="text-lg font-bold text-white">Our Products</h4>
-            <ul className="space-y-2 text-sm">
+            <h4 className="text-xl font-bold text-white">Our Products</h4>
+            <ul className="space-y-2 text-base">
               <li><a href="#" className="text-gray-300 hover:text-primary transition-colors font-medium">Spices & Powders</a></li>
               <li><a href="#" className="text-gray-300 hover:text-primary transition-colors font-medium">Tea Products</a></li>
               <li><a href="#" className="text-gray-300 hover:text-primary transition-colors font-medium">Processed Foods</a></li>
@@ -45,8 +45,8 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h4 className="text-lg font-bold text-white">Contact Us</h4>
-            <div className="space-y-3 text-sm">
+            <h4 className="text-xl font-bold text-white">Contact Us</h4>
+            <div className="space-y-3 text-base">
               <div className="flex items-center gap-2">
                 <span className="text-primary">📞</span>
                 <span className="text-gray-300 font-medium">+91 9160040202</span>
@@ -70,8 +70,8 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 mt-8 sm:mt-12 pt-6 sm:pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
-            <p className="text-sm text-gray-400 font-medium">
-              © Thrayana PRIVATE LIMITED. All rights reserved.
+            <p className="text-base text-gray-400 font-medium">
+              © THRAYANA PRIVATE LIMITED. All rights reserved.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#" className="text-gray-400 hover:text-primary transition-colors">

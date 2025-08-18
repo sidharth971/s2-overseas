@@ -20,9 +20,9 @@ const Header = () => {
     const isActive = isActiveLink(path);
     
     if (isActive) {
-      return `${baseClasses} text-primary font-semibold`;
+      return `${baseClasses} text-yellow-400 font-semibold`;
     }
-    return `${baseClasses} text-foreground hover:text-primary`;
+    return `${baseClasses} text-white hover:text-yellow-400`;
   };
 
   const scrollToProducts = () => {
@@ -46,70 +46,63 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 fixed top-0 z-50">
+    <header className="w-full border-b bg-black/95 backdrop-blur supports-[backdrop-filter]:bg-black/80 fixed top-0 z-50">
       <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20 lg:h-24">
+        <div className="flex items-center justify-between h-20 sm:h-24 lg:h-28">
           {/* Brand */}
           <button
             className="group flex items-center gap-2 sm:gap-3 focus:outline-none"
             onClick={() => navigate('/')}
             aria-label="Go to home"
           >
-            <div className="h-10 sm:h-12 lg:h-14 flex items-center">
+            <div className="h-16 sm:h-20 lg:h-24 flex items-center">
               <img
-                src="/assets/brand/logo.jpg"
+                src="/assets/brand/Thrayana.jpg"
                 alt="Thrayana Logo"
                 className="h-full w-auto object-contain"
               />
             </div>
             <div className="inline-block">
               <h1
-                className="whitespace-nowrap text-base sm:text-xl lg:text-2xl font-extrabold tracking-tight gradient-text"
+                className="whitespace-nowrap text-base sm:text-xl lg:text-4xl font-extrabold tracking-tight text-yellow-400"
                 style={{ fontFamily: 'Playfair Display, serif' }}
               >
-                Thrayana PRIVATE LIMITED
+                THRAYANA PRIVATE LIMITED
               </h1>
             </div>
           </button>
 
-          {/* ISO Certification - Hidden on mobile */}
-          <div className="hidden md:flex items-center gap-3">
-            <div className="bg-gradient-to-r from-red-500 to-red-600 text-white text-sm px-4 py-2 rounded-full font-semibold shadow-md">ISO</div>
-            <div className="text-base">
-              <div className="font-bold text-foreground">22000:2025</div>
-              <div className="text-sm text-muted-foreground">Certified</div>
-            </div>
-          </div>
+          {/* Removed ISO certification badge and text */}
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
             <a 
               onClick={() => navigate('/')}
-              className={`${getLinkClasses('/')} text-lg`}
+              className={`${getLinkClasses('/')} text-2xl`}
             >
               Home
             </a>
             <a 
               onClick={() => navigate('/about')}
-              className={`${getLinkClasses('/about')} text-lg`}
+              className={`${getLinkClasses('/about')} text-2xl`}
             >
               About
             </a>
             <a 
               onClick={() => navigate('/products')}
-              className={`${getLinkClasses('/products')} text-lg`}
+              className={`${getLinkClasses('/products')} text-2xl`}
             >
               Products
             </a>
             <a 
               onClick={() => navigate('/certificates')}
-              className={`${getLinkClasses('/certificates')} text-lg`}
+              className={`${getLinkClasses('/certificates')} text-2xl`}
             >
               Certificates
             </a>
             <a 
               onClick={navigateToContact}
-              className={`${getLinkClasses('/contact')} text-lg`}
+              className={`${getLinkClasses('/contact')} text-2xl`}
             >
               Contact
             </a>
@@ -118,11 +111,11 @@ const Header = () => {
           {/* Desktop Contact Info & CTA */}
           <div className="hidden lg:flex items-center gap-6">
             <div className="text-right text-base">
-              <div className="font-bold text-foreground">+91 9160040202</div>
-              <div className="font-bold text-foreground">+91 8310439092</div>
-              <div className="text-muted-foreground text-sm">sales@thrayana.com</div>
+              <div className="font-bold text-white text-xl">+91 9160040202</div>
+              <div className="font-bold text-white text-xl">+91 8310439092</div>
+              <div className="text-gray-300 text-xl">sales@thrayana.com</div>
             </div>
-            <Button className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-semibold text-lg px-6 py-3 rounded-xl shadow-md">
+            <Button className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-semibold text-lg px-6 py-3 rounded-2xl shadow-md">
               Get The Brochure
             </Button>
           </div>
@@ -146,37 +139,37 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden border-t bg-background/95 backdrop-blur">
+          <div className="lg:hidden border-t bg-black/95 backdrop-blur">
             <div className="px-4 py-6 space-y-4">
               {/* Mobile Navigation */}
               <nav className="space-y-4">
                 <a 
                   onClick={() => handleNavigation('/')}
-                  className={`${getLinkClasses('/')} block text-lg py-2`}
+                  className={`${getLinkClasses('/')} block text-xl py-2`}
                 >
                   Home
                 </a>
                 <a 
                   onClick={() => handleNavigation('/about')}
-                  className={`${getLinkClasses('/about')} block text-lg py-2`}
+                  className={`${getLinkClasses('/about')} block text-xl py-2`}
                 >
                   About
                 </a>
                 <a 
                   onClick={() => handleNavigation('/products')}
-                  className={`${getLinkClasses('/products')} block text-lg py-2`}
+                  className={`${getLinkClasses('/products')} block text-xl py-2`}
                 >
                   Products
                 </a>
                 <a 
                   onClick={() => handleNavigation('/certificates')}
-                  className={`${getLinkClasses('/certificates')} block text-lg py-2`}
+                  className={`${getLinkClasses('/certificates')} block text-xl py-2`}
                 >
                   Certificates
                 </a>
                 <a 
                   onClick={() => handleNavigation('/contact')}
-                  className={`${getLinkClasses('/contact')} block text-lg py-2`}
+                  className={`${getLinkClasses('/contact')} block text-xl py-2`}
                 >
                   Contact
                 </a>
@@ -185,9 +178,9 @@ const Header = () => {
               {/* Mobile Contact Info */}
               <div className="pt-4 border-t">
                 <div className="space-y-2">
-                  <div className="font-bold text-foreground">+91 9160040202</div>
-                  <div className="font-bold text-foreground">+91 8310439092</div>
-                  <div className="text-muted-foreground text-sm">sales@thrayana.com</div>
+                  <div className="font-bold text-white">+91 9160040202</div>
+                  <div className="font-bold text-white">+91 8310439092</div>
+                  <div className="text-gray-300 text-sm">sales@thrayana.com</div>
                 </div>
                 <Button className="btn-primary w-full mt-4">
                   Get The Brochure

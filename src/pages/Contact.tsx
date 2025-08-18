@@ -170,7 +170,7 @@ const Contact = () => {
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">Phone Numbers</h3>
                   <div className="space-y-2">
-                    <a href="tel:+919160040202" className="inline-block text-sm sm:text-base text-gray-700 font-medium hover:text-blue-600 transition-colors">+91 9160040202</a>
+                    <a href="tel:+919160040202" className="inline-block text-sm sm:text-base text-gray-700 font-medium hover:text-blue-600 transition-colors">+91 9160040202</a> <br />
                     <a href="tel:+918310439092" className="inline-block text-sm sm:text-base text-gray-700 font-medium hover:text-blue-600 transition-colors">+91 8310439092</a>
                   </div>
                 </div>
@@ -185,7 +185,7 @@ const Contact = () => {
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">Email Addresses</h3>
                   <div className="space-y-2">
-                    <a href="mailto:sales@thrayana.com" className="inline-block text-sm sm:text-base text-gray-700 font-medium hover:text-blue-600 transition-colors">sales@thrayana.com</a>
+                    <a href="mailto:sales@thrayana.com" className="inline-block text-sm sm:text-base text-gray-700 font-medium hover:text-blue-600 transition-colors">sales@thrayana.com</a><br />
                     <a href="mailto:office@thrayana.com" className="inline-block text-sm sm:text-base text-gray-700 font-medium hover:text-blue-600 transition-colors">office@thrayana.com</a>
                   </div>
                 </div>

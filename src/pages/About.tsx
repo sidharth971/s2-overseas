@@ -75,11 +75,6 @@ const About = () => {
 
   const achievements = [
     {
-      icon: Award,
-      title: "ISO 22000:2025 Certified",
-      description: "Highest food safety and quality management standards"
-    },
-    {
       icon: Globe,
       title: "Global Reach",
       description: "Exporting to 25+ countries worldwide"
@@ -127,10 +122,10 @@ const About = () => {
                 Our Story
               </Badge>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 gradient-text">
-                Thrayana PRIVATE LIMITED
+              THRAYANA PRIVATE LIMITED
               </h1>
               <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-6 max-w-3xl mx-auto">
-                Three Pillars, One Vision: <span className="text-primary font-semibold">Diversity • Balance • Strategy</span>
+                Three Pillars, One Vision: <span className="text-black font-semibold">Diversity • Balance • Strategy</span>
               </p>
               <p className="text-base sm:text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
                 Founded on the principle that success comes from a harmonious blend of diverse perspectives, 
@@ -169,17 +164,17 @@ const About = () => {
                       <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
                         {pillar.title}
                       </h3>
-                      <p className="text-sm sm:text-base text-muted-foreground mb-4">
+                      <p className="text-xl sm:text-xl text-muted-foreground mb-4">
                         {pillar.description}
                       </p>
                     </div>
 
                     {/* Stats */}
                     <div className="text-center mb-6 p-4 bg-card/50 rounded-lg">
-                      <div className="text-2xl sm:text-3xl font-bold text-primary mb-1">
+                      <div className="text-2xl sm:text-4xl font-bold text-primary mb-1">
                         {pillar.stats.value}
                       </div>
-                      <div className="text-xs sm:text-sm text-muted-foreground">
+                      <div className="text-xl sm:text-lg text-muted-foreground">
                         {pillar.stats.label}
                       </div>
                     </div>
@@ -189,7 +184,7 @@ const About = () => {
                       {pillar.details.map((detail, idx) => (
                         <div key={idx} className="flex items-start space-x-3">
                           <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                          <p className="text-xs sm:text-sm text-muted-foreground">{detail}</p>
+                          <p className="text-xl sm:text-xl text-muted-foreground">{detail}</p>
                         </div>
                       ))}
                     </div>
@@ -206,10 +201,10 @@ const About = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
               {/* Mission */}
               <div className="animate-in slide-in-from-left duration-1000">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-6">
+                <h2 className="text-3xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-6">
                   Our Mission
                 </h2>
-                <p className="text-sm sm:text-base lg:text-lg text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-sm sm:text-xl lg:text-xl text-muted-foreground mb-6 leading-relaxed">
                   To become the most trusted bridge between India's authentic cultural heritage and global markets, 
                   ensuring that every product we export carries the essence of Indian tradition while meeting 
                   international quality standards.
@@ -219,9 +214,9 @@ const About = () => {
                   promoting sustainable practices that benefit both our communities and the environment.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="secondary" className="text-xs sm:text-sm">Cultural Preservation</Badge>
-                  <Badge variant="secondary" className="text-xs sm:text-sm">Quality Excellence</Badge>
-                  <Badge variant="secondary" className="text-xs sm:text-sm">Sustainable Growth</Badge>
+                  <Badge variant="secondary" className="text-lg sm:text-lg">Cultural Preservation</Badge>
+                  <Badge variant="secondary" className="text-lg sm:text-lg">Quality Excellence</Badge>
+                  <Badge variant="secondary" className="text-lg sm:text-lg">Sustainable Growth</Badge>
                 </div>
               </div>
 
@@ -230,18 +225,18 @@ const About = () => {
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-6">
                   Our Vision
                 </h2>
-                <p className="text-sm sm:text-base lg:text-lg text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-xl sm:text-xl lg:text-lg text-muted-foreground mb-6 leading-relaxed">
                   To be recognized globally as the premier exporter of authentic Indian products, known for 
                   our unwavering commitment to quality, sustainability, and cultural authenticity.
                 </p>
-                <p className="text-sm sm:text-base lg:text-lg text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-xl sm:text-xl lg:text-lg text-muted-foreground mb-6 leading-relaxed">
                   We envision a world where traditional craftsmanship thrives alongside modern innovation, 
                   creating opportunities for artisans while delivering exceptional products to global consumers.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="secondary" className="text-xs sm:text-sm">Global Leadership</Badge>
-                  <Badge variant="secondary" className="text-xs sm:text-sm">Innovation</Badge>
-                  <Badge variant="secondary" className="text-xs sm:text-sm">Community Impact</Badge>
+                  <Badge variant="secondary" className="text-lg sm:text-lg">Global Leadership</Badge>
+                  <Badge variant="secondary" className="text-lg sm:text-lg">Innovation</Badge>
+                  <Badge variant="secondary" className="text-lg sm:text-lg">Community Impact</Badge>
                 </div>
               </div>
             </div>
@@ -255,7 +250,7 @@ const About = () => {
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
                 Our Achievements
               </h2>
-              <p className="text-sm sm:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg sm:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
                 Milestones that reflect our commitment to excellence and growth
               </p>
             </div>
@@ -271,10 +266,10 @@ const About = () => {
                     <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
                       <achievement.icon className="w-6 h-6 text-primary" />
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">
+                    <h3 className="text-xl font-semibold text-foreground mb-2">
                       {achievement.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-lg text-muted-foreground">
                       {achievement.description}
                     </p>
                   </CardContent>
@@ -291,7 +286,7 @@ const About = () => {
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
                 Our Core Values
               </h2>
-              <p className="text-sm sm:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg sm:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
                 The principles that guide our every action and decision
               </p>
             </div>
@@ -304,10 +299,10 @@ const About = () => {
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
                   <div className="bg-card rounded-xl p-6 sm:p-8 hover:shadow-lg transition-all duration-300">
-                    <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3">
+                    <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-3">
                       {value.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-muted-foreground">
+                    <p className="text-lg sm:text-lg text-muted-foreground">
                       {value.description}
                     </p>
                   </div>
@@ -324,15 +319,24 @@ const About = () => {
               Ready to Partner With Us?
             </h2>
             <p className="text-sm sm:text-base lg:text-lg text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto">
-              Experience the perfect blend of tradition and innovation with Thrayana PRIVATE LIMITED. 
+              Experience the perfect blend of tradition and innovation with THRAYANA PRIVATE LIMITED. 
               Let's build lasting partnerships based on our three pillars of success.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="btn-primary">
-                <TrendingUp className="w-4 h-4 mr-2" />
-                Explore Our Products
+              <Button
+                size="lg"
+                className="btn-primary text-xl px-8 py-5"
+                onClick={() => { window.location.href = "/products"; }}
+              >
+                <TrendingUp className="w-7 h-7 mr-3 text-3xl" />
+                <span className="text-xl font-semibold">Explore Our Products</span>
               </Button>
-              <Button size="lg" variant="outline">
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-xl px-8 py-5 font-semibold"
+                onClick={() => { window.location.href = "/contact"; }}
+              >
                 Contact Us
               </Button>
           </div>

@@ -7,7 +7,6 @@ const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const heroImages = [
-    "https://aquaconnectexim.com/wp-content/uploads/2024/12/B2B-Spices-768x580.webp",
     "/assets/products/Gemini_Generated_Image_4b6i9r4b6i9r4b6i.png",
     "/assets/products/kondapalli-toys/Kondapalli-Toys.webp",
     "/assets/products/Banana-Fiber.webp",
@@ -25,23 +24,12 @@ const HeroSection = () => {
   return (
     <section className="relative w-full min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 overflow-hidden z-0">
       {/* Background Decorative Elements */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-20 left-4 sm:left-10 w-16 h-16 sm:w-20 sm:h-20 opacity-10">
-          <img src="https://aquaconnectexim.com/wp-content/uploads/2023/02/Group-1.png" alt="spice decoration" className="w-full h-full" />
-        </div>
-        <div className="absolute top-40 right-4 sm:right-20 w-12 h-12 sm:w-16 sm:h-16 opacity-10 transform rotate-12">
-          <img src="https://aquaconnectexim.com/wp-content/uploads/2023/02/Group-3.png" alt="spice decoration" className="w-full h-full" />
-        </div>
-        <div className="absolute bottom-32 left-4 sm:left-20 w-16 h-16 sm:w-24 sm:h-24 opacity-10">
-          <img src="https://aquaconnectexim.com/wp-content/uploads/2023/02/Group-2.png" alt="spice decoration" className="w-full h-full" />
-        </div>
-      </div>
 
       <div className="w-full h-full flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 lg:pt-32">
         <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 pb-8 sm:pb-12">
           {/* Left Content */}
           <div className="flex-1 space-y-6 sm:space-y-8 animate-in slide-in-from-left duration-1000 text-center lg:text-left">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-shadow-lg">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold leading-tight text-shadow-lg">
               Indian Spices, Processed Food & Tea{" "}
               <span className="gradient-text">Exporter</span> Globally
             </h1>
