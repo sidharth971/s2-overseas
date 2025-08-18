@@ -49,23 +49,28 @@ const Header = () => {
     <header className="w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 fixed top-0 z-50">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20 lg:h-24">
-          {/* Logo */}
-          <div className="flex items-center gap-2 sm:gap-4">
-            <div className="w-28 h-10 sm:w-32 sm:h-12 lg:w-36 lg:h-14 flex items-center">
+          {/* Brand */}
+          <button
+            className="group flex items-center gap-2 sm:gap-3 focus:outline-none"
+            onClick={() => navigate('/')}
+            aria-label="Go to home"
+          >
+            <div className="h-10 sm:h-12 lg:h-14 flex items-center">
               <img
                 src="/assets/brand/logo.jpg"
                 alt="Thrayana Logo"
                 className="h-full w-auto object-contain"
-                onClick={() => navigate('/')}
               />
             </div>
-            <div className="hidden sm:block">
-              <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground" style={{ fontFamily: 'Playfair Display, serif' }}>Thrayana PRIVATE LIMITED</h1>
+            <div className="inline-block">
+              <h1
+                className="whitespace-nowrap text-base sm:text-xl lg:text-2xl font-extrabold tracking-tight gradient-text"
+                style={{ fontFamily: 'Playfair Display, serif' }}
+              >
+                Thrayana PRIVATE LIMITED
+              </h1>
             </div>
-            <div className="sm:hidden">
-              <h1 className="text-sm font-bold text-foreground" style={{ fontFamily: 'Playfair Display, serif' }}>Thrayana</h1>
-            </div>
-          </div>
+          </button>
 
           {/* ISO Certification - Hidden on mobile */}
           <div className="hidden md:flex items-center gap-3">
@@ -77,7 +82,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-10">
+          <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
             <a 
               onClick={() => navigate('/')}
               className={`${getLinkClasses('/')} text-lg`}
@@ -117,7 +122,7 @@ const Header = () => {
               <div className="font-bold text-foreground">+91 8310439092</div>
               <div className="text-muted-foreground text-sm">sales@thrayana.com</div>
             </div>
-            <Button className="btn-primary text-lg px-6 py-3">
+            <Button className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-semibold text-lg px-6 py-3 rounded-xl shadow-md">
               Get The Brochure
             </Button>
           </div>
