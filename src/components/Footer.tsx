@@ -6,11 +6,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-lg">Thrayana</span>
+              <div className="w-12 h-10 sm:w-14 sm:h-12 rounded-xl overflow-hidden bg-white/5 flex items-center justify-center shadow-lg">
+                <img src="/assets/brand/logo.jpg" alt="Thrayana Logo" className="h-full w-auto object-contain" />
               </div>
               <div>
-                <h3 className="text-lg font-bold gradient-text">Thrayana PRIVATE LIMITED</h3>
+                <h3 className="text-lg font-bold" style={{ fontFamily: 'Playfair Display, serif' }}>Thrayana PRIVATE LIMITED</h3>
                 <p className="text-sm text-gray-300 font-medium">Premium Export Solutions</p>
               </div>
             </div>

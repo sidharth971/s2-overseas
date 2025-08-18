@@ -51,14 +51,19 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 sm:h-20 lg:h-24">
           {/* Logo */}
           <div className="flex items-center gap-2 sm:gap-4">
-            <div className="w-12 h-10 sm:w-14 sm:h-12 lg:w-16 lg:h-14 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
-              <span className="text-white font-bold text-xs sm:text-sm">Thrayana</span>
+            <div className="w-28 h-10 sm:w-32 sm:h-12 lg:w-36 lg:h-14 flex items-center">
+              <img
+                src="/assets/brand/logo.jpg"
+                alt="Thrayana Logo"
+                className="h-full w-auto object-contain"
+                onClick={() => navigate('/')}
+              />
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground gradient-text">Thrayana PRIVATE LIMITED</h1>
+              <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground" style={{ fontFamily: 'Playfair Display, serif' }}>Thrayana PRIVATE LIMITED</h1>
             </div>
             <div className="sm:hidden">
-              <h1 className="text-sm font-bold text-foreground gradient-text">Thrayana</h1>
+              <h1 className="text-sm font-bold text-foreground" style={{ fontFamily: 'Playfair Display, serif' }}>Thrayana</h1>
             </div>
           </div>
 
