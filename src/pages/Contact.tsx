@@ -15,6 +15,7 @@ const Contact = () => {
     phone: "",
     company: "",
     country: "",
+    countryOther: "",
     product: "",
     message: "",
     userType: "",
@@ -39,7 +40,18 @@ const Contact = () => {
 
       const loadingToast = toast.loading('Sending your inquiry...');
 
-      const response = await fetch('http://localhost:3001/api/contact', {
+      const effectiveCountry = formData.country === 'other' ? (formData.countryOther || '').trim() : formData.country;
+      if (!effectiveCountry) {
+        toast.dismiss(loadingToast);
+        toast.error('Please provide your country');
+        return;
+      }
+
+      // Prefer Flask server if configured, else fallback to Node API, else same-origin
+      const flaskBase = import.meta.env.VITE_FLASK_API_BASE as string | undefined;
+      const nodeBase = import.meta.env.VITE_API_BASE as string | undefined;
+      const apiBase = flaskBase || nodeBase || (typeof window !== 'undefined' ? window.location.origin : '') || 'http://localhost:3001';
+      const response = await fetch(`${apiBase}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -47,7 +59,7 @@ const Contact = () => {
           email: formData.email,
           phone: formData.phone,
           company: formData.company,
-          country: formData.country,
+          country: effectiveCountry,
           product: formData.product,
           message: formData.message,
           userType: formData.userType,
@@ -67,6 +79,7 @@ const Contact = () => {
           phone: "",
           company: "",
           country: "",
+          countryOther: "",
           product: "",
           message: "",
           userType: "",
@@ -95,7 +108,7 @@ const Contact = () => {
   return (
     <div className="w-full">
       <Header />
-      <Toaster position="top-right" toastOptions={{ duration: 4000, style: { background: '#363636', color: '#fff' } }} />
+      <Toaster position="top-center" toastOptions={{ duration: 4000, style: { background: '#363636', color: '#fff' } }} />
 
       {/* Animated gradient blobs background */}
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
@@ -290,6 +303,19 @@ const Contact = () => {
                               <SelectItem value="other">Other</SelectItem>
                             </SelectContent>
                           </Select>
+                          {formData.country === 'other' && (
+                            <div className="space-y-2 mt-3">
+                              <label className="block text-sm font-semibold text-gray-700">Enter your Country *</label>
+                              <Input
+                                type="text"
+                                placeholder="Type your country name"
+                                value={formData.countryOther}
+                                onChange={(e) => handleInputChange('countryOther', e.target.value)}
+                                className="w-full border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                                required
+                              />
+                            </div>
+                          )}
                         </div>
                       </div>
 

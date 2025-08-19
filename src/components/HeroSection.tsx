@@ -25,16 +25,15 @@ const HeroSection = () => {
     <section className="relative w-full min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 overflow-hidden z-0">
       {/* Background Decorative Elements */}
 
-      <div className="w-full h-full flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 lg:pt-32">
-        <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 pb-8 sm:pb-12">
+      <div className="w-full h-full flex items-center justify-center px-3 sm:px-4 md:px-6 lg:px-8 pt-24 sm:pt-28 lg:pt-32">
+        <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 lg:gap-12 pb-6 sm:pb-10">
           {/* Left Content */}
           <div className="flex-1 space-y-6 sm:space-y-8 animate-in slide-in-from-left duration-1000 text-center lg:text-left">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold leading-tight text-shadow-lg">
-            Banana Fiber, Indian Spices, Processed Food & Tea{" "}
-              <span className="gradient-text">Exporter</span> Globally
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold leading-tight text-shadow-lg text-center lg:text-left" style={{ fontFamily: 'Playfair Display, serif' }}>
+              Banana Fiber, Indian Spices, Processed Food & Tea <span className="gradient-text">Exporter</span> Globally
             </h1>
             
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0">
+            <p className="text-sm sm:text-lg text-muted-foreground leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0">
               Spices are the heart of any dish, and India is a leading spices exporter to global 
               markets. Due to their rich flavor and superior quality, Indian spices are a staple in kitchens 
               across the globe. Indian spice exporters connect farmers to a global market, making India a 
@@ -53,9 +52,9 @@ const HeroSection = () => {
           </div>
 
           {/* Right Image Slideshow */}
-          <div className="flex-1 relative animate-in slide-in-from-right duration-1000 delay-300 w-full max-w-md lg:max-w-xl mx-auto z-10 mt-4 sm:mt-6">
+          <div className="flex-1 relative animate-in slide-in-from-right duration-1000 delay-300 w-full max-w-sm sm:max-w-md lg:max-w-xl mx-auto z-10 mt-4 sm:mt-6">
             <div className="relative w-full">
-              <div className="relative h-64 sm:h-80 md:h-96 lg:h-[600px] overflow-hidden rounded-2xl lg:rounded-3xl shadow-2xl z-10">
+              <div className="relative h-56 sm:h-80 md:h-96 lg:h-[600px] overflow-hidden rounded-xl sm:rounded-2xl lg:rounded-3xl shadow-2xl z-10">
                 {heroImages.map((image, index) => (
                   <div
                     key={index}
@@ -75,7 +74,7 @@ const HeroSection = () => {
               </div>
 
               {/* Navigation Dots */}
-              <div className="flex justify-center gap-2 mt-4 sm:mt-6">
+              <div className="flex justify-center gap-2 mt-3 sm:mt-6">
                 {heroImages.map((_, index) => (
                   <button
                     key={index}

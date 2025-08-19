@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-12 sm:py-16">
+    <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-3 sm:py-4">
       <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
           {/* Company Info */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             <div className="flex items-center gap-3">
               <div className="w-12 h-10 sm:w-14 sm:h-12 rounded-xl overflow-hidden bg-white/5 flex items-center justify-center shadow-lg">
                 <img src="/assets/brand/Thrayana.jpg" alt="Thrayana Logo" className="h-full w-auto object-contain" />
@@ -21,32 +23,32 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             <h4 className="text-xl font-bold text-white">Quick Links</h4>
-            <ul className="space-y-2 text-base">
-              <li><a href="#" className="text-gray-300 hover:text-primary transition-colors font-medium">Home</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-primary transition-colors font-medium">About Us</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-primary transition-colors font-medium">Products</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-primary transition-colors font-medium">Services</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-primary transition-colors font-medium">Certificates</a></li>
+            <ul className="space-y-1.5 text-base">
+              <li><Link to="/" className="text-gray-300 hover:text-primary transition-colors font-medium">Home</Link></li>
+              <li><Link to="/about" className="text-gray-300 hover:text-primary transition-colors font-medium">About Us</Link></li>
+              <li><Link to="/products" className="text-gray-300 hover:text-primary transition-colors font-medium">Products</Link></li>
+              <li><Link to="/certificates" className="text-gray-300 hover:text-primary transition-colors font-medium">Certificates</Link></li>
+              <li><Link to="/contact" className="text-gray-300 hover:text-primary transition-colors font-medium">Contact</Link></li>
             </ul>
           </div>
 
           {/* Products */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             <h4 className="text-xl font-bold text-white">Our Products</h4>
-            <ul className="space-y-2 text-base">
-              <li><a href="#" className="text-gray-300 hover:text-primary transition-colors font-medium">Spices & Powders</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-primary transition-colors font-medium">Tea Products</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-primary transition-colors font-medium">Processed Foods</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-primary transition-colors font-medium">Organic Products</a></li>
+            <ul className="space-y-1.5 text-base">
+              <li><Link to="/products/2" className="text-gray-300 hover:text-primary transition-colors font-medium">Turmeric Powder</Link></li>
+              <li><Link to="/products/8" className="text-gray-300 hover:text-primary transition-colors font-medium">Moringa Powder</Link></li>
+              <li><Link to="/products/1" className="text-gray-300 hover:text-primary transition-colors font-medium">Banana Powder</Link></li>
+              <li><Link to="/products/3" className="text-gray-300 hover:text-primary transition-colors font-medium">Red Chilli Powder</Link></li>
             </ul>
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             <h4 className="text-xl font-bold text-white">Contact Us</h4>
-            <div className="space-y-3 text-base">
+            <div className="space-y-2 text-base">
               <div className="flex items-center gap-2">
                 <span className="text-primary">📞</span>
                 <span className="text-gray-300 font-medium">+91 9160040202</span>
@@ -68,18 +70,18 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-700 mt-8 sm:mt-12 pt-6 sm:pt-8">
+        <div className="border-t border-gray-700 mt-3 sm:mt-4 pt-2 sm:pt-3">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
             <p className="text-base text-gray-400 font-medium">
               © THRAYANA PRIVATE LIMITED. All rights reserved.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+              <Link to="/privacy" className="text-gray-400 hover:text-primary transition-colors">
                 Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+              </Link>
+              <Link to="/terms" className="text-gray-400 hover:text-primary transition-colors">
                 Terms of Service
-              </a>
+              </Link>
             </div>
           </div>
         </div>

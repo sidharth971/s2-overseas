@@ -64,7 +64,7 @@ const Header = () => {
             </div>
             <div className="inline-block max-w-[50vw] min-w-0 truncate">
               <h1
-                className="whitespace-nowrap text-sm sm:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-extrabold tracking-tight gradient-text"
+                className="whitespace-nowrap text-sm sm:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-extrabold tracking-tight text-yellow-400"
                 style={{ fontFamily: 'Playfair Display, serif' }}
               >
                 THRAYANA PRIVATE LIMITED
@@ -121,17 +121,18 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center gap-2">
+          <div className="lg:hidden flex items-center gap-2 shrink-0">
             <Button 
               variant="ghost" 
               size="sm"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2"
+              className={`${isMobileMenuOpen ? 'bg-[#F5A812] text-black' : 'bg-transparent text-white hover:text-[#F5A812] hover:bg-[#F5A812]/20'} p-2 rounded-xl focus:ring-0 focus:outline-none`}
+              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
             >
               {isMobileMenuOpen ? (
-                <X className="h-6 w-6" />
+                <X className="h-6 w-6 text-black" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className="h-6 w-6 text-white" />
               )}
             </Button>
           </div>

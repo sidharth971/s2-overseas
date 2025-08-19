@@ -27,6 +27,21 @@ const Certificates = () => {
       icon: Building2,
       tags: ["Legal", "Company Registration", "Government Approved", "CIN Registered"]
     },
+    {
+      id: 2,
+      title: "Udyam Registration Certificate",
+      category: "legal",
+      type: "MSME / Udyam Registration",
+      description: "Government-issued Udyam (MSME) registration certificate for Thrayana Private Limited confirming micro/small/medium enterprise status.",
+      longDescription: "This document certifies Udyam (MSME) registration for Thrayana Private Limited under the Ministry of Micro, Small and Medium Enterprises. It supports eligibility for MSME-related benefits and compliance in domestic and international trade.",
+      filePath: "/assets/certificates/UDYAM-KR-03-0581017.pdf",
+      issueDate: "—",
+      validUntil: "As per MSME regulations",
+      issuingAuthority: "Ministry of Micro, Small and Medium Enterprises, Government of India",
+      status: "Active",
+      icon: Award,
+      tags: ["MSME", "Udyam", "Government", "Compliance"]
+    },
 
   ];
 
