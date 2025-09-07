@@ -65,7 +65,7 @@ const Header = () => {
             <div className="inline-block max-w-[50vw] min-w-0 truncate">
               <h1
                 className="whitespace-nowrap text-sm sm:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-extrabold tracking-tight text-yellow-400"
-                style={{ fontFamily: 'Playfair Display, serif' }}
+                style={{ fontFamily: 'Inter, system-ui, -apple-system, sans-serif' }}
               >
                 THRAYANA PRIVATE LIMITED
               </h1>

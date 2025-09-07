@@ -2,11 +2,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Send, Loader2, Globe2, ShieldCheck, Clock, Phone, Mail } from "lucide-react";
 import toast, { Toaster } from "react-hot-toast";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -28,6 +29,15 @@ const Contact = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  useEffect(() => {
+    try {
+      // Initialize EmailJS with public key inline (no .env)
+      emailjs.init({ publicKey: 'JSdkOm_Fe-QeSbxzL' });
+    } catch (err) {
+      // noop — init is optional when passing publicKey to send
+    }
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -47,31 +57,73 @@ const Contact = () => {
         return;
       }
 
-      // Prefer Flask server if configured, else fallback to Node API, else same-origin
-      const flaskBase = import.meta.env.VITE_FLASK_API_BASE as string | undefined;
-      const nodeBase = import.meta.env.VITE_API_BASE as string | undefined;
-      const apiBase = flaskBase || nodeBase || (typeof window !== 'undefined' ? window.location.origin : '') || 'http://localhost:3001';
-      const response = await fetch(`${apiBase}/api/contact`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          company: formData.company,
-          country: effectiveCountry,
-          product: formData.product,
-          message: formData.message,
-          userType: formData.userType,
-          incoterms: formData.incoterms,
-          shipmentType: formData.shipmentType
-        }),
+      // Build a single composed HTML message to match your EmailJS template (which uses {{name}} and {{message}})
+      const composedMessage = `
+        <strong>Customer Information</strong><br/>
+        <strong>Name:</strong> ${formData.name}<br/>
+        <strong>Email:</strong> ${formData.email}<br/>
+        <strong>Phone:</strong> ${formData.phone || 'Not provided'}<br/>
+        <strong>Company:</strong> ${formData.company || 'Not provided'}<br/>
+        <strong>User Type:</strong> ${formData.userType || 'Not specified'}<br/>
+        <strong>Country:</strong> ${effectiveCountry}<br/>
+        <br/>
+        <strong>Product & Requirements</strong><br/>
+        <strong>Product:</strong> ${formData.product}<br/>
+        <strong>InCoTerms:</strong> ${formData.incoterms || 'Not specified'}<br/>
+        <strong>Shipment Type:</strong> ${formData.shipmentType || 'Not specified'}<br/>
+        <br/>
+        <strong>Message</strong><br/>
+        ${formData.message}<br/>
+        <br/>
+        <em>Submitted on: ${new Date().toLocaleString()}</em>
+      `;
+
+      // EmailJS params; your template uses {{name}} in subject and {{message}} in body
+      const templateParams = {
+        // For your template placeholders
+        name: formData.name,
+        message: composedMessage,
+        // Extra fields in case you add them to the template later
+        from_name: formData.name,
+        from_email: formData.email,
+        reply_to: formData.email,
+        to_name: 'Thrayana Sales',
+        phone: formData.phone || 'Not provided',
+        company: formData.company || 'Not provided',
+        user_type: formData.userType || 'Not specified',
+        country: effectiveCountry,
+        product: formData.product,
+        incoterms: formData.incoterms || 'Not specified',
+        shipment_type: formData.shipmentType || 'Not specified',
+        submission_date: new Date().toLocaleString(),
+        to_email: 'sales@thrayana.com'
+      };
+
+      // EmailJS credentials - CONFIGURED
+      const SERVICE_ID = 'service_ghblhgy'; // Your EmailJS service ID
+      const TEMPLATE_ID = 'template_keepjtr'; // Your EmailJS template ID  
+      const PUBLIC_KEY = 'JSdkOm_Fe-QeSbxzL'; // Your EmailJS public key
+
+      // Credentials are inlined per requirement; no placeholder guard needed
+
+      console.log('Attempting to send email with EmailJS...', {
+        serviceId: SERVICE_ID,
+        templateId: TEMPLATE_ID,
+        templateParams: templateParams
       });
 
-      const result = await response.json();
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        templateParams,
+        PUBLIC_KEY
+      );
+
+      console.log('EmailJS response:', result);
       toast.dismiss(loadingToast);
 
-      if (result.ok) {
+      if (result.status === 200) {
         toast.success('Inquiry sent successfully! We will get back to you within 24 hours.', { duration: 5000 });
         setFormData({
           name: "",
@@ -90,12 +142,13 @@ const Contact = () => {
           containerType: ""
         });
       } else {
-        toast.error(result.error || 'Failed to send inquiry. Please try again.', { duration: 5000 });
+        toast.error(`Failed to send inquiry. Status: ${result.status}`, { duration: 5000 });
       }
       
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error sending email:', error);
-      toast.error('Network error. Please check your connection and try again.', { duration: 5000 });
+      const details = error?.text || error?.message || 'Unknown error';
+      toast.error(`Failed to send email: ${details}`, { duration: 6000 });
     } finally {
       setIsSubmitting(false);
     }
