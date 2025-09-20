@@ -7,10 +7,11 @@ const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const heroImages = [
-    "/assets/products/Gemini_Generated_Image_4b6i9r4b6i9r4b6i.png",
+    "/assets/products/a2-gir-cow-ghee/Cow Ghee_4.png",
+    "/assets/products/wild-forest-honey/honey_4.png",
     "/assets/products/kondapalli-toys/Kondapalli-Toys.webp",
-    "/assets/products/Banana-Fiber.webp",
-    "/assets/products/moringa-powder-application.jpg"
+    "/assets/products/banana-fiber/Banana-Fiber.webp",
+    "/assets/products/moringa-powder/moringa-powder-application.jpg"
   ];
 
   useEffect(() => {
@@ -30,14 +31,15 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className="flex-1 space-y-6 sm:space-y-8 animate-in slide-in-from-left duration-1000 text-center lg:text-left">
             <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold leading-tight text-shadow-lg text-center lg:text-left" style={{ fontFamily: 'Playfair Display, serif' }}>
-              Banana Fiber, Indian Spices, Processed Food & Tea <span className="gradient-text">Exporter</span> Globally
+              A2 Cow Ghee, Honey, Banana Fiber, Indian Spices & 100% Natural Food <span className="gradient-text">Exporter</span> Globally
             </h1>
             
             <p className="text-sm sm:text-lg text-muted-foreground leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0">
-              Spices are the heart of any dish, and India is a leading spices exporter to global 
-              markets. Due to their rich flavor and superior quality, Indian spices are a staple in kitchens 
-              across the globe. Indian spice exporters connect farmers to a global market, making India a 
-              dominant player in the global trade of spices importers and exporters.
+              From premium A2 Cow Ghee and pure Wild Forest Honey to traditional Indian spices and 
+              100% natural food products, we export the finest quality natural products globally. Our A2 Gir Cow Ghee is 
+              made using traditional bilona method, while our Wild Forest Honey is sourced from pristine 
+              Western Ghats. Combined with authentic Indian spices and purely natural food products, we connect 
+              farmers to global markets, making India a dominant player in natural food exports.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">

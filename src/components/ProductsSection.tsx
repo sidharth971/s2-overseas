@@ -6,39 +6,51 @@ const ProductsSection = () => {
 
   const products = [
     {
+      id: 9,
+      name: "A2 Gir Cow Ghee",
+      image: "/assets/products/a2-gir-cow-ghee/Cow Ghee_3.png",
+      productId: 9
+    },
+    {
+      id: 10,
+      name: "Honey",
+      image: "/assets/products/wild-forest-honey/honey_4.png",
+      productId: 10
+    },
+    {
       id: 1,
       name: "Banana Powder",
-      image: "/assets/products/Banana-Powder.webp",
+      image: "/assets/products/banana-powder/Banana-Powder.webp",
       productId: 1
     },
     {
       id: 8,
       name: "Moringa Powder",
-      image: "/assets/products/moringa-powder-packaging.jpg",
+      image: "/assets/products/moringa-powder/moringa-leaves-harvest.jpg",
       productId: 8
     },
     {
       id: 2,
       name: "Turmeric Powder",
-      image: "/assets/products/Turmeric-Powder.webp",
+      image: "/assets/products/turmeric-powder/Turmeric-Powder.webp",
       productId: 2
     },
     {
       id: 3,
       name: "Guntur Red Chilli Powder",
-      image: "/assets/products/Red-Chilli-Powder.webp",
+      image: "/assets/products/red-chilli-powder/Red-Chilli-Powder.webp",
       productId: 3
     },
     {
       id: 4,
       name: "Cumin Seed",
-      image: "/assets/products/Cumin-Seed.webp",
+      image: "/assets/products/cumin-seeds/Cumin-Seed.webp",
       productId: 4
     },
     {
       id: 5,
       name: "Banana Fiber",
-      image: "/assets/products/Banana-Fiber.webp",
+      image: "/assets/products/banana-fiber/Banana-Fiber.webp",
       productId: 5
     },
     {
@@ -57,7 +69,7 @@ const ProductsSection = () => {
                             <span className="gradient-text">Products</span> We Export
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto font-medium px-4">
-            Premium quality Indian spices, processed foods, and traditional handicrafts for global markets
+            Premium quality 100% natural Indian food products, spices, and traditional handicrafts for global markets
           </p>
         </div>
 
@@ -83,6 +95,7 @@ const ProductsSection = () => {
                     src={product.image}
                     alt={product.name}
                     className="w-full h-48 sm:h-56 lg:h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                    onError={(e) => { e.currentTarget.src = "/assets/products/Gemini_Generated_Image_4b6i9r4b6i9r4b6i.png"; }}
                   />
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold text-foreground group-hover:text-primary transition-colors px-2">

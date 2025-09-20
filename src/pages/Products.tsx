@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import toast from "react-hot-toast";
 
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -20,12 +21,72 @@ const Products = () => {
 
   const products = [
     {
+      id: 9,
+      name: "A2 Gir Cow Ghee",
+      category: "dairy-products",
+      image: "/assets/products/a2-gir-cow-ghee/Cow Ghee_3.png",
+      newImage: "/assets/products/a2-gir-cow-ghee/Cow Ghee_3.png",
+      description: "Premium A2 Gir Cow Ghee made from the milk of indigenous Gir cows, known for its rich flavor, golden color, and traditional Ayurvedic benefits.",
+      details: {
+        origin: "Gujarat, India",
+        processing: "Traditional bilona method",
+        packaging: "Glass jars, 500g, 1kg, 5kg containers",
+        certifications: ["FSSAI", "Organic", "A2 Milk Certified"],
+        applications: ["Cooking", "Traditional medicine", "Ayurvedic treatments", "Religious ceremonies"],
+        specifications: {
+          fatContent: "99.5-99.9%",
+          moisture: "< 0.5%",
+          color: "Golden yellow",
+          shelfLife: "12 months",
+          smokePoint: "250°C",
+          meltingPoint: "32-35°C",
+          acidity: "< 0.5%",
+          peroxideValue: "< 1.0 meq/kg"
+        }
+      },
+      features: [
+        "Made from A2 milk of Gir cows",
+        "Traditional bilona churning method",
+        "Rich in healthy fats and vitamins",
+        "High smoke point for cooking"
+      ]
+    },
+    {
+      id: 10,
+      name: "Wild Forest Honey",
+      category: "natural-products",
+      image: "/assets/products/wild-forest-honey/honey_4.png",
+      newImage: "/assets/products/wild-forest-honey/honey_4.png",
+      description: "Pure wild forest honey collected from natural beehives in pristine forest areas, known for its rich flavor, natural sweetness, and numerous health benefits.",
+      details: {
+        origin: "Western Ghats, India",
+        processing: "Raw, unfiltered, unprocessed",
+        packaging: "Glass jars, 250g, 500g, 1kg containers",
+        certifications: ["FSSAI", "Organic", "Raw Honey Certified"],
+        applications: ["Natural sweetener", "Traditional medicine", "Skincare", "Culinary uses", "Health supplements"],
+        specifications: {
+          moisture: "< 18%",
+          sugarContent: "80-85%",
+          color: "Golden amber",
+          shelfLife: "Indefinite",
+          viscosity: "Medium to thick",
+          crystallization: "Natural process"
+        }
+      },
+      features: [
+        "100% pure and natural",
+        "No artificial additives",
+        "Rich in antioxidants",
+        "Natural antibacterial properties"
+      ]
+    },
+    {
       id: 1,
       name: "Banana Powder",
-      category: "processed-foods",
-      image: "/assets/products/Banana-Powder.webp",
-      newImage: "/assets/products/banana-powder-detail.jpg",
-      description: "Premium dehydrated banana powder made from carefully selected ripe bananas, perfect for food processing and nutritional supplements.",
+      category: "natural-foods",
+      image: "/assets/products/banana-powder/Banana-Powder.webp",
+      newImage: "/assets/products/banana-powder/banana-powder-packaging.jpg",
+      description: "Premium 100% natural dehydrated banana powder made from carefully selected ripe bananas, perfect for natural food applications and nutritional supplements.",
       details: {
         origin: "Kerala, India",
         processing: "Dehydrated and finely ground",
@@ -49,10 +110,10 @@ const Products = () => {
     {
       id: 8,
       name: "Moringa Powder",
-      category: "processed-foods",
-      image: "/assets/products/moringa-leaves-harvest.jpg",
-      newImage: "/assets/products/moringa-powder-detail.jpg",
-      description: "Nutrient-rich moringa powder made from shade-dried moringa leaves, perfect for health supplements and food fortification.",
+      category: "natural-foods",
+      image: "/assets/products/moringa-powder/moringa-leaves-harvest.jpg",
+      newImage: "/assets/products/moringa-powder/moringa-powder-packaging.jpg",
+      description: "Nutrient-rich 100% natural moringa powder made from shade-dried moringa leaves, perfect for health supplements and natural food fortification.",
       details: {
         origin: "Tamil Nadu, India",
         processing: "Shade-dried and finely ground",
@@ -77,8 +138,8 @@ const Products = () => {
       id: 2,
       name: "Turmeric Powder",
       category: "spices",
-      image: "/assets/products/Turmeric-Powder.webp",
-      newImage: "/assets/products/turmeric-powder-detail.jpg",
+      image: "/assets/products/turmeric-powder/Turmeric-Powder.webp",
+      newImage: "/assets/products/turmeric-powder/turmeric-applications.jpg",
       description: "Premium organic turmeric powder with high curcumin content, sourced from the finest rhizomes of Karnataka and Tamil Nadu.",
       details: {
         origin: "Karnataka & Tamil Nadu, India",
@@ -104,8 +165,8 @@ const Products = () => {
       id: 3,
       name: "Guntur Red Chilli Powder",
       category: "spices",
-      image: "/assets/products/Red-Chilli-Powder.webp",
-      newImage: "/assets/products/red-chilli-powder-detail.jpg",
+      image: "/assets/products/red-chilli-powder/Red-Chilli-Powder.webp",
+      newImage: "/assets/products/red-chilli-powder/chilli-powder-applications.jpg",
       description: "Fiery red chilli powder from the famous Guntur region, known for its intense heat and rich flavor profile.",
       details: {
         origin: "Guntur, Andhra Pradesh, India",
@@ -131,8 +192,8 @@ const Products = () => {
       id: 4,
       name: "Cumin Seeds",
       category: "spices",
-      image: "/assets/products/Cumin-Seed.webp",
-      newImage: "/assets/products/cumin-seeds-detail.jpg",
+      image: "/assets/products/cumin-seeds/Cumin-Seed.webp",
+      newImage: "/assets/products/cumin-seeds/cumin-applications.jpg",
       description: "Premium quality cumin seeds with intense aroma and flavor, perfect for both whole and ground applications.",
       details: {
         origin: "Rajasthan & Gujarat, India",
@@ -158,8 +219,8 @@ const Products = () => {
       id: 5,
       name: "Banana Fiber",
       category: "textiles",
-      image: "/assets/products/Banana-Fiber.webp",
-      newImage: "/assets/products/banana-fiber-detail.jpg",
+      image: "/assets/products/banana-fiber/Banana-Fiber.webp",
+      newImage: "/assets/products/banana-fiber/banana-fiber-products.jpg",
       description: "Sustainable banana fiber extracted from banana plant stems, perfect for eco-friendly textiles and handicrafts.",
       details: {
         origin: "Kerala & Karnataka, India",
@@ -186,7 +247,7 @@ const Products = () => {
       name: "Kondapalli Toys",
       category: "handicrafts",
       image: "/assets/products/kondapalli-toys/Kondapalli-Toys.webp",
-      newImage: "/assets/products/kondapalli-toys-detail.jpg",
+      newImage: "/assets/products/kondapalli-toys/kondapalli-toys-1.jpg",
       description: "Traditional wooden toys from Kondapalli village, handcrafted by skilled artisans using age-old techniques. 🌱 Eco-friendly and sustainable.",
       isEcoFriendly: true,
       details: {
@@ -213,8 +274,8 @@ const Products = () => {
       id: 7,
       name: "Black Tea Powder",
       category: "beverages",
-      image: "/assets/products/Black-Tea-Powder.webp",
-      newImage: "/assets/products/black-tea-powder-detail.jpg",
+      image: "/assets/products/black-tea-powder/Black-Tea-Powder.webp",
+      newImage: "/assets/products/black-tea-powder/tea-applications.jpg",
       description: "Premium black tea powder from Assam and Darjeeling regions, perfect for instant tea preparations and food applications.",
       details: {
         origin: "Assam & Darjeeling, India",
@@ -240,8 +301,10 @@ const Products = () => {
 
   const categories = [
     { id: "all", name: "All Products" },
+    { id: "dairy-products", name: "Dairy Products" },
+    { id: "natural-products", name: "Natural Products" },
     { id: "spices", name: "Spices" },
-    { id: "processed-foods", name: "Processed Foods" },
+    { id: "natural-foods", name: "Natural Foods" },
     { id: "textiles", name: "Textiles" },
     { id: "handicrafts", name: "Handicrafts" },
     { id: "beverages", name: "Beverages" }
@@ -250,6 +313,29 @@ const Products = () => {
   const filteredProducts = selectedCategory === "all" 
     ? products 
     : products.filter(product => product.category === selectedCategory);
+
+  const handleBrochureClick = () => {
+    navigate('/contact');
+    // Show notification after a short delay to ensure page navigation
+    setTimeout(() => {
+      toast.success('📋 To get our comprehensive product brochure, please contact us through the form below. We will send you the detailed product catalog with specifications, pricing, and certifications via email within 24 hours.', {
+        duration: 8000,
+        position: 'top-center',
+        style: {
+          background: '#10B981',
+          color: '#fff',
+          fontSize: '16px',
+          maxWidth: '600px',
+          textAlign: 'center',
+          padding: '20px 24px',
+          borderRadius: '12px',
+          boxShadow: '0 6px 20px rgba(0, 0, 0, 0.2)',
+          fontWeight: '500',
+          lineHeight: '1.5'
+        }
+      });
+    }, 500);
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -263,7 +349,7 @@ const Products = () => {
                 Our Products
               </h1>
               <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
-                Discover our premium collection of Indian spices, processed foods, and traditional handicrafts 
+                Discover our premium collection of 100% natural Indian food products, spices, and traditional handicrafts 
                 that bring the authentic taste and culture of India to the world.
               </p>
             </div>
@@ -418,7 +504,12 @@ const Products = () => {
                 <Button size="lg" className="btn-primary w-full sm:w-auto" onClick={() => navigate('/contact')}>
                   Request Quotation
                 </Button>
-                <Button size="lg" variant="outline" className="w-full sm:w-auto">
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="w-full sm:w-auto"
+                  onClick={handleBrochureClick}
+                >
                   Download Brochure
                 </Button>
               </div>

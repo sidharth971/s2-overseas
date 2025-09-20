@@ -49,14 +49,167 @@ const ProductDetails = () => {
 
   const products = [
     {
+      id: 9,
+      name: "A2 Gir Cow Ghee",
+      category: "dairy-products",
+      mainImage: "/assets/products/a2-gir-cow-ghee/Cow Ghee_4.png",
+      gallery: [
+        "/assets/products/a2-gir-cow-ghee/Cow Ghee_2.png",
+        "/assets/products/a2-gir-cow-ghee/Cow Ghee_3.png",
+        "/assets/products/a2-gir-cow-ghee/Cow Ghee_1.png"
+      ],
+      description: "Premium A2 Gir Cow Ghee made from the milk of indigenous Gir cows, known for its rich flavor, golden color, and traditional Ayurvedic benefits. Our ghee is produced using the traditional bilona method that preserves all natural nutrients.",
+      longDescription: "Our premium A2 Gir Cow Ghee is sourced from the finest Gir cows in Gujarat, India. The Gir breed is known for producing A2 milk, which contains the A2 beta-casein protein that is easier to digest and has numerous health benefits. The traditional bilona method involves churning curd to extract butter, which is then heated to produce pure ghee. This process preserves the natural nutrients and gives our ghee its distinctive golden color and rich aroma.",
+      details: {
+        origin: "Gujarat, India",
+        processing: "Traditional bilona method",
+        packaging: "Customized packaging",
+        certifications: ["FSSAI", "Organic", "A2 Milk Certified", "Ayurvedic"],
+        applications: ["Cooking", "Traditional medicine", "Ayurvedic treatments", "Religious ceremonies", "Skincare", "Hair care"],
+        specifications: {
+          fatContent: "99.5-99.9%",
+          moisture: "< 0.5%",
+          color: "Golden yellow",
+          shelfLife: "12 months",
+          smokePoint: "250°C",
+          aroma: "Rich and nutty",
+          texture: "Smooth and creamy",
+          meltingPoint: "32-35°C",
+          density: "0.91-0.93 g/cm³",
+          acidity: "< 0.5%",
+          peroxideValue: "< 1.0 meq/kg",
+          freeFattyAcids: "< 0.3%",
+          unsaponifiableMatter: "0.5-1.5%",
+          iodineValue: "26-38",
+          saponificationValue: "190-200"
+        },
+        nutritionalInfo: {
+          calories: "900 kcal/100g",
+          totalFat: "99.9g/100g",
+          saturatedFat: "61.9g/100g",
+          monounsaturatedFat: "28.7g/100g",
+          polyunsaturatedFat: "3.7g/100g",
+          cholesterol: "256mg/100g",
+          vitaminA: "3069 IU/100g",
+          vitaminE: "2.8mg/100g"
+        }
+      },
+      features: [
+        "Made from A2 milk of Gir cows",
+        "Traditional bilona churning method",
+        "Rich in healthy fats and vitamins",
+        "High smoke point for cooking",
+        "No artificial preservatives",
+        "Ayurvedic properties"
+      ],
+      benefits: [
+        "Supports digestive health",
+        "Boosts immunity",
+        "Rich in fat-soluble vitamins",
+        "Anti-inflammatory properties",
+        "Traditional healing benefits",
+        "High heat stability for cooking"
+      ]
+    },
+    {
+      id: 10,
+      name: "Wild Forest Honey",
+      category: "natural-products",
+      mainImage: "/assets/products/wild-forest-honey/honey_4.png",
+      gallery: [
+        "/assets/products/wild-forest-honey/honey_2.png",
+        "/assets/products/wild-forest-honey/honey_3.png",
+        "/assets/products/wild-forest-honey/honey_1.png"
+      ],
+      description: "Pure wild forest honey collected from natural beehives in pristine forest areas, known for its rich flavor, natural sweetness, and numerous health benefits. Our honey is raw, unfiltered, and unprocessed to preserve all natural nutrients and medicinal properties.",
+      longDescription: "Our premium Wild Forest Honey is sourced from the pristine forests of the Western Ghats in India, where bees collect nectar from a diverse range of wildflowers, medicinal plants, and forest flora including neem, tulsi, jamun, and other indigenous species. This natural diversity gives our honey its unique flavor profile, rich nutritional content, and exceptional medicinal properties. The honey is collected using traditional methods that ensure minimal processing, preserving all natural enzymes, antioxidants, beneficial compounds, and pollen grains. Our forest honey undergoes natural fermentation and contains live enzymes that provide numerous health benefits. The Western Ghats region is a UNESCO World Heritage Site known for its biodiversity, making our honey a truly premium natural product.",
+      details: {
+        origin: "Western Ghats, India",
+        processing: "Raw, unfiltered, unprocessed",
+        packaging: "Customized packaging",
+        certifications: ["FSSAI", "Organic", "Raw Honey Certified", "Forest Honey"],
+        applications: ["Natural sweetener", "Traditional medicine", "Skincare", "Culinary uses", "Health supplements", "Wound healing"],
+        specifications: {
+          moisture: "< 18%",
+          sugarContent: "80-85%",
+          color: "Golden amber to dark amber",
+          shelfLife: "Indefinite",
+          viscosity: "Medium to thick",
+          crystallization: "Natural process",
+          pH: "3.4-6.1",
+          density: "1.36-1.45 g/cm³",
+          fructose: "38-40%",
+          glucose: "31-35%",
+          sucrose: "< 5%",
+          maltose: "7-10%",
+          waterActivity: "< 0.6",
+          hydroxymethylfurfural: "< 40 mg/kg",
+          diastaseActivity: "> 8 Schade units",
+          proline: "> 180 mg/kg",
+          electricalConductivity: "0.8-1.5 mS/cm",
+          ashContent: "< 0.6%",
+          insolubleMatter: "< 0.1%"
+        },
+        nutritionalInfo: {
+          calories: "304 kcal/100g",
+          carbohydrates: "82.4g/100g",
+          sugars: "82.1g/100g",
+          protein: "0.3g/100g",
+          fiber: "0.2g/100g",
+          sodium: "4mg/100g",
+          potassium: "52mg/100g",
+          calcium: "6mg/100g",
+          iron: "0.4mg/100g",
+          vitaminC: "0.5mg/100g",
+          magnesium: "2mg/100g",
+          phosphorus: "4mg/100g",
+          zinc: "0.2mg/100g",
+          copper: "0.04mg/100g",
+          manganese: "0.08mg/100g",
+          selenium: "0.8μg/100g",
+          riboflavin: "0.04mg/100g",
+          niacin: "0.12mg/100g",
+          pantothenicAcid: "0.07mg/100g",
+          vitaminB6: "0.02mg/100g",
+          folate: "2μg/100g"
+        }
+      },
+      features: [
+        "100% pure and natural wild forest honey",
+        "No artificial additives or preservatives",
+        "Rich in antioxidants and flavonoids",
+        "Natural antibacterial and antimicrobial properties",
+        "Raw and unfiltered to preserve enzymes",
+        "Wild forest sourced from UNESCO World Heritage Site",
+        "Contains live enzymes and beneficial bacteria",
+        "Natural crystallization process",
+        "Traditional collection methods",
+        "Medicinal plant nectar sources"
+      ],
+      benefits: [
+        "Natural energy boost with slow-release sugars",
+        "Powerful antioxidant properties",
+        "Soothes sore throat and cough relief",
+        "Wound healing and skin regeneration",
+        "Digestive health and gut microbiome support",
+        "Immune system enhancement",
+        "Anti-inflammatory properties",
+        "Natural sleep aid and relaxation",
+        "Blood sugar regulation support",
+        "Cardiovascular health benefits",
+        "Traditional Ayurvedic medicinal properties",
+        "Natural prebiotic effects"
+      ]
+    },
+    {
       id: 1,
       name: "Banana Powder",
-      category: "processed-foods",
-      mainImage: "/assets/products/Banana-Powder.webp",
+      category: "natural-foods",
+      mainImage: "/assets/products/banana-powder/Banana-Powder.webp",
       gallery: [
-        "/assets/products/banana-powder-process.jpg",
-        "/assets/products/banana-powder-packaging.jpg",
-        "/assets/products/banana-powder-application.jpg"
+        "/assets/products/banana-powder/banana-powder-process.jpg",
+        "/assets/products/banana-powder/banana-powder-packaging.jpg",
+        "/assets/products/banana-powder/banana-powder-application.jpg"
       ],
       description: "Premium dehydrated banana powder made from carefully selected ripe bananas, perfect for food processing and nutritional supplements. Our banana powder is produced using state-of-the-art dehydration technology that preserves the natural nutrients and flavor of fresh bananas.",
       longDescription: "Our premium banana powder is sourced from the finest Cavendish bananas grown in the fertile regions of Kerala. The bananas are carefully selected at peak ripeness to ensure maximum nutritional value and natural sweetness. The dehydration process removes moisture while preserving essential nutrients, making it an ideal ingredient for various food applications.",
@@ -103,12 +256,12 @@ const ProductDetails = () => {
     {
       id: 8,
       name: "Moringa Powder",
-      category: "processed-foods",
-      mainImage: "/assets/products/moringa-leaves-harvest.jpg",
+      category: "natural-foods",
+      mainImage: "/assets/products/moringa-powder/moringa-leaves-harvest.jpg",
       gallery: [
-        "/assets/products/moringa-leaves-harvest.jpg",
-        "/assets/products/moringa-powder-packaging.jpg",
-        "/assets/products/moringa-powder-application.jpg"
+        "/assets/products/moringa-powder/moringa-leaves-harvest.jpg",
+        "/assets/products/moringa-powder/moringa-powder-packaging.jpg",
+        "/assets/products/moringa-powder/moringa-powder-application.jpg"
       ],
       description: "Nutrient-rich moringa powder made from shade-dried moringa leaves, perfect for health supplements and food fortification.",
       longDescription: "Our moringa powder is made from carefully selected moringa leaves, shade-dried to preserve nutrients and finely ground to a vibrant green powder. Moringa is known as the 'miracle tree' for its exceptional nutritional profile, including high levels of protein, vitamins, minerals, and antioxidants. It is ideal for boosting immunity, supporting energy, and fortifying foods and beverages.",
@@ -157,11 +310,11 @@ const ProductDetails = () => {
       id: 2,
       name: "Turmeric Powder",
       category: "spices",
-      mainImage: "/assets/products/turmeric-applications.jpg",
+      mainImage: "/assets/products/turmeric-powder/turmeric-applications.jpg",
       gallery: [
-        "/assets/products/turmeric-rhizomes.jpg",
-        "/assets/products/turmeric-processing.jpg",
-        "/assets/products/turmeric-applications.jpg"
+        "/assets/products/turmeric-powder/turmeric-rhizomes.jpg",
+        "/assets/products/turmeric-powder/turmeric-processing.jpg",
+        "/assets/products/turmeric-powder/turmeric-applications.jpg"
       ],
       description: "Premium organic turmeric powder with high curcumin content, sourced from the finest rhizomes of Karnataka and Tamil Nadu. Our turmeric is known for its vibrant color and potent medicinal properties.",
       longDescription: "Our premium turmeric powder is sourced from the finest rhizomes grown in the fertile soils of Karnataka and Tamil Nadu. The turmeric is carefully harvested, sun-dried, and ground to preserve its natural curcumin content and vibrant golden color. This traditional spice has been used in Ayurvedic medicine for centuries.",
@@ -209,11 +362,11 @@ const ProductDetails = () => {
       id: 3,
       name: "Guntur Red Chilli Powder",
       category: "spices",
-      mainImage: "/assets/products/chilli-powder-applications.jpg",
+      mainImage: "/assets/products/red-chilli-powder/chilli-powder-applications.jpg",
       gallery: [
-        "/assets/products/guntur-chilli.jpg",
-        "/assets/products/chilli-processing.jpg",
-        "/assets/products/chilli-powder-applications.jpg"
+        "/assets/products/red-chilli-powder/guntur-chilli.jpg",
+        "/assets/products/red-chilli-powder/chilli-processing.jpg",
+        "/assets/products/red-chilli-powder/chilli-powder-applications.jpg"
       ],
       description: "Fiery red chilli powder from the famous Guntur region, known for its intense heat and rich flavor profile. These chillies are carefully selected and processed to maintain their authentic South Indian taste.",
       longDescription: "Guntur chillies are renowned worldwide for their exceptional heat and flavor. Grown in the fertile soils of Andhra Pradesh, these chillies are sun-dried and ground to create a powder that captures the authentic taste of South Indian cuisine. The intense heat and rich color make it perfect for traditional and modern cooking.",
@@ -260,11 +413,11 @@ const ProductDetails = () => {
       id: 4,
       name: "Cumin Seeds",
       category: "spices",
-      mainImage: "/assets/products/Cumin-Seed.webp",
+      mainImage: "/assets/products/cumin-seeds/Cumin-Seed.webp",
       gallery: [
-        "/assets/products/cumin-farm.jpg",
-        "/assets/products/cumin-processing.jpg",
-        "/assets/products/cumin-applications.jpg"
+        "/assets/products/cumin-seeds/cumin-farm.jpg",
+        "/assets/products/cumin-seeds/cumin-processing.jpg",
+        "/assets/products/cumin-seeds/cumin-applications.jpg"
       ],
       description: "Premium quality cumin seeds with intense aroma and flavor, perfect for both whole and ground applications. Our cumin seeds are carefully selected and cleaned to ensure the highest quality.",
       longDescription: "Our premium cumin seeds are sourced from the arid regions of Rajasthan and Gujarat, where the climate and soil conditions create the perfect environment for growing high-quality cumin. The seeds are carefully harvested, cleaned, and graded to ensure consistent quality and flavor.",
@@ -312,11 +465,11 @@ const ProductDetails = () => {
       id: 5,
       name: "Banana Fiber",
       category: "textiles",
-      mainImage: "/assets/products/Banana-Fiber.webp",
+      mainImage: "/assets/products/banana-fiber/Banana-Fiber.webp",
       gallery: [
-        "/assets/products/banana-fiber-extraction.jpg",
-        "/assets/products/banana-fiber-products.jpg",
-        "/assets/products/banana-fiber-sustainable.jpg"
+        "/assets/products/banana-fiber/banana-fiber-extraction.jpg",
+        "/assets/products/banana-fiber/banana-fiber-products.jpg",
+        "/assets/products/banana-fiber/banana-fiber-sustainable.jpg"
       ],
       description: "Sustainable banana fiber extracted from banana plant stems, perfect for eco-friendly textiles and handicrafts. Our banana fiber is processed using traditional methods that support rural artisans.",
       longDescription: "Banana fiber is extracted from the stems of banana plants, a byproduct of banana cultivation. This sustainable fiber is processed using traditional methods that have been passed down through generations. The fiber is strong, durable, and completely biodegradable, making it an excellent eco-friendly alternative to synthetic fibers.",
@@ -414,11 +567,11 @@ const ProductDetails = () => {
       id: 7,
       name: "Black Tea Powder",
       category: "beverages",
-      mainImage: "/assets/products/Black-Tea-Powder.webp",
+      mainImage: "/assets/products/black-tea-powder/Black-Tea-Powder.webp",
       gallery: [
-        "/assets/products/tea-gardens.jpg",
-        "/assets/products/tea-processing.jpg",
-        "/assets/products/tea-applications.jpg"
+        "/assets/products/black-tea-powder/tea-gardens.jpg",
+        "/assets/products/black-tea-powder/tea-processing.jpg",
+        "/assets/products/black-tea-powder/tea-applications.jpg"
       ],
       description: "Premium black tea powder from Assam and Darjeeling regions, perfect for instant tea preparations and food applications. Our tea powder maintains the authentic taste of traditional Indian tea.",
       longDescription: "Our premium black tea powder is sourced from the finest tea gardens of Assam and Darjeeling, where the unique climate and soil conditions create exceptional tea leaves. The tea is carefully processed and ground to create a powder that captures the rich flavor and aroma of traditional Indian tea.",
@@ -711,4 +864,4 @@ const ProductDetails = () => {
   );
 };
 
-export default ProductDetails; 
+export default ProductDetails;

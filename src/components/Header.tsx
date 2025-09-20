@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import toast from "react-hot-toast";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -33,6 +34,29 @@ const Header = () => {
         block: 'start'
       });
     }
+  };
+
+  const handleBrochureClick = () => {
+    navigate('/contact');
+    // Show notification after a short delay to ensure page navigation
+    setTimeout(() => {
+      toast.success('📋 To get our comprehensive product brochure, please contact us through the form below. We will send you the detailed product catalog with specifications, pricing, and certifications via email within 24 hours.', {
+        duration: 8000,
+        position: 'top-center',
+        style: {
+          background: '#10B981',
+          color: '#fff',
+          fontSize: '16px',
+          maxWidth: '600px',
+          textAlign: 'center',
+          padding: '20px 24px',
+          borderRadius: '12px',
+          boxShadow: '0 6px 20px rgba(0, 0, 0, 0.2)',
+          fontWeight: '500',
+          lineHeight: '1.5'
+        }
+      });
+    }, 500);
   };
 
   const navigateToContact = () => {
@@ -115,7 +139,10 @@ const Header = () => {
               <div className="font-bold text-white">+91 8310439092</div>
               <div className="text-gray-300">sales@thrayana.com</div>
             </div>
-            <Button className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-semibold text-lg px-6 py-3 rounded-2xl shadow-md">
+            <Button 
+              onClick={handleBrochureClick}
+              className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-semibold text-lg px-6 py-3 rounded-2xl shadow-md"
+            >
               Get The Brochure
             </Button>
           </div>
@@ -183,7 +210,10 @@ const Header = () => {
                   <div className="font-bold text-white">+91 8310439092</div>
                   <div className="text-gray-300 text-sm">sales@thrayana.com</div>
                 </div>
-                <Button className="btn-primary w-full mt-4">
+                <Button 
+                  onClick={handleBrochureClick}
+                  className="btn-primary w-full mt-4"
+                >
                   Get The Brochure
                 </Button>
               </div>
